@@ -3,43 +3,31 @@ const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
 
-   reporter: 'cypress-mochawesome-reporter',
-  video: true,
+  experimentalCspAllowList: ['default-src', 'script-src', 'script-src-elem'],
+  chromeWebSecurity: false,
+  experimentalStudio: true,
+  waitForAnimations: false,
+  projectId:"jzt3qx",
+  animationDistanceThreshold: 50,
+  reporter: 'mochawesome',
+  reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
+    reporterEnabled: 'cypress-mochawesome-reporter, mocha-junit-reporter',
     charts: true,
-    reportPageTitle: 'cypress',
+    reportPageTitle: 'Strike_Automation',
+    reportFilename: '[name].html',
     embeddedScreenshots: true,
-    html: true,
-    
     inlineAssets: true,
-    saveAllAttempts: true,
-    screenshots: true,
-    enableCode:false,
-  // experimentalCspAllowList: ['default-src', 'script-src', 'script-src-elem'],
-  // chromeWebSecurity: true,
-  // experimentalStudio: true,
-  // waitForAnimations: true,
-  // projectId:"jzt3qx",
-  // animationDistanceThreshold: 50,
-  // reporter: 'mochawesome',
-  // reporter: 'cypress-mochawesome-reporter',
-  // reporterOptions: {
-  //   reporterEnabled: 'cypress-mochawesome-reporter, mocha-junit-reporter',
-  //   charts: true,
-  //   reportPageTitle: 'Strike_Automation',
-  //   //reportFilename: '[name].html',
-  //   embeddedScreenshots: true,
-  //   inlineAssets: true,
-  //   overwrite: true,
-  //   html: true,
-  //   json: true,
-  //   video: true,
-  //   videoCompression: true,
-  //   // saveAllAttempts: false,
-  //   videoOnFailOnly: true,
-  //   quiet: true,
-  //   debug: true,
-  //   saveJson: true
+    overwrite: false,
+    html: true,
+    json: true,
+    video: true,
+    videoCompression: true,
+     saveAllAttempts: false,
+    videoOnFailOnly: true,
+    quiet: true,
+    debug: true,
+    saveJson: true
   },
   e2e: {
     setupNodeEvents(on, config) {
@@ -50,15 +38,15 @@ module.exports = defineConfig({
           return null
         },
       })
-      // on('before:run', async (details) => {
-      //   console.log('override before:run');
-      //   await beforeRunHook(details);
-      // });
+      on('before:run', async (details) => {
+        console.log('override before:run');
+        await beforeRunHook(details);
+      });
 
-      // on('after:run', async () => {
-      //   console.log('override after:run');
-      //   await afterRunHook();
-      // });
+      on('after:run', async () => {
+        console.log('override after:run');
+        await afterRunHook();
+      });
     },
   },
 
