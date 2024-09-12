@@ -3,9 +3,9 @@ const { beforeRunHook, afterRunHook } = require('cypress-mochawesome-reporter/li
 
 module.exports = defineConfig({
   experimentalCspAllowList: ['default-src', 'script-src', 'script-src-elem'],
-  chromeWebSecurity: false,
+  chromeWebSecurity: true,
   experimentalStudio: true,
-  waitForAnimations: false,
+  waitForAnimations: true,
   projectId:"jzt3qx",
   animationDistanceThreshold: 50,
   reporter: 'mochawesome',
@@ -17,7 +17,7 @@ module.exports = defineConfig({
     //reportFilename: '[name].html',
     embeddedScreenshots: true,
     inlineAssets: true,
-    overwrite: false,
+    overwrite: true,
     html: true,
     json: true,
     video: true,
