@@ -1,32 +1,45 @@
 const { defineConfig } = require('cypress');
-const { beforeRunHook, afterRunHook } = require('cypress-mochawesome-reporter/lib');
+//const { beforeRunHook, afterRunHook } = require('cypress-mochawesome-reporter/lib');
 
 module.exports = defineConfig({
-  experimentalCspAllowList: ['default-src', 'script-src', 'script-src-elem'],
-  chromeWebSecurity: true,
-  experimentalStudio: true,
-  waitForAnimations: true,
-  projectId:"jzt3qx",
-  animationDistanceThreshold: 50,
-  reporter: 'mochawesome',
-  reporter: 'cypress-mochawesome-reporter',
+
+   reporter: 'cypress-mochawesome-reporter',
+  video: true,
   reporterOptions: {
-    reporterEnabled: 'cypress-mochawesome-reporter, mocha-junit-reporter',
     charts: true,
-    reportPageTitle: 'Strike_Automation',
-    //reportFilename: '[name].html',
+    reportPageTitle: 'cypress',
     embeddedScreenshots: true,
-    inlineAssets: true,
-    overwrite: true,
     html: true,
-    json: true,
-    video: true,
-    videoCompression: true,
-    // saveAllAttempts: false,
-    videoOnFailOnly: true,
-    quiet: true,
-    debug: true,
-    saveJson: true
+    
+    inlineAssets: true,
+    saveAllAttempts: true,
+    screenshots: true,
+    enableCode:false,
+  // experimentalCspAllowList: ['default-src', 'script-src', 'script-src-elem'],
+  // chromeWebSecurity: true,
+  // experimentalStudio: true,
+  // waitForAnimations: true,
+  // projectId:"jzt3qx",
+  // animationDistanceThreshold: 50,
+  // reporter: 'mochawesome',
+  // reporter: 'cypress-mochawesome-reporter',
+  // reporterOptions: {
+  //   reporterEnabled: 'cypress-mochawesome-reporter, mocha-junit-reporter',
+  //   charts: true,
+  //   reportPageTitle: 'Strike_Automation',
+  //   //reportFilename: '[name].html',
+  //   embeddedScreenshots: true,
+  //   inlineAssets: true,
+  //   overwrite: true,
+  //   html: true,
+  //   json: true,
+  //   video: true,
+  //   videoCompression: true,
+  //   // saveAllAttempts: false,
+  //   videoOnFailOnly: true,
+  //   quiet: true,
+  //   debug: true,
+  //   saveJson: true
   },
   e2e: {
     setupNodeEvents(on, config) {
@@ -37,15 +50,15 @@ module.exports = defineConfig({
           return null
         },
       })
-      on('before:run', async (details) => {
-        console.log('override before:run');
-        await beforeRunHook(details);
-      });
+      // on('before:run', async (details) => {
+      //   console.log('override before:run');
+      //   await beforeRunHook(details);
+      // });
 
-      on('after:run', async () => {
-        console.log('override after:run');
-        await afterRunHook();
-      });
+      // on('after:run', async () => {
+      //   console.log('override after:run');
+      //   await afterRunHook();
+      // });
     },
   },
 
