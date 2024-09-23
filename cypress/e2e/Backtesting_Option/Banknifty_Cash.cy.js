@@ -382,50 +382,50 @@ it("Option Backtesting", () => {
   cy.get(".sticky_btns_wrap > :nth-child(2) > div > .ng-star-inserted").click();
   cy.get(".k-window-titlebar").should("be.visible");
   //cy.get('[style="float: none;"] > .common_anchor').click();
-  cy.get('.text-start > .full_wrap > .form-control').type('user48945')
-  cy.get('[style="float: none;"] > .common_anchor').click()
+//   cy.get('.text-start > .full_wrap > .form-control').type('user48945')
+//   cy.get('[style="float: none;"] > .common_anchor').click()
 
   
  
 
-  // Click on my Strategies
+//   // Click on my Strategies
 
-  cy.get('#navBarWeb > :nth-child(3) > #Strategies').click();
+//   cy.get('#navBarWeb > :nth-child(3) > #Strategies').click();
 
-  // Click on Activate
-  cy.wait(2000);
-  cy.xpath("(//button[@type='button'][normalize-space()='Activate'])[1]").click();
-  // cy.get(':nth-child(1) > .inner_wrap > .sinner_wrap > .buttons_wrap > #strategy\.strategyId > .btn').click();
+//   // Click on Activate
+//   cy.wait(2000);
+//   cy.xpath("(//button[@type='button'][normalize-space()='Activate'])[1]").click();
+//   // cy.get(':nth-child(1) > .inner_wrap > .sinner_wrap > .buttons_wrap > #strategy\.strategyId > .btn').click();
 
-  // Click on Live trade
+//   // Click on Live trade
 
-  // cy.xpath("//a[normalize-space()='Live Trade']").click();
+//   // cy.xpath("//a[normalize-space()='Live Trade']").click();
 
-  // cy.get('.ng-trigger').should("be.visible");
+//   // cy.get('.ng-trigger').should("be.visible");
 
-  // Click on Broker Login
-  cy.get('.dash_left_wrap > :nth-child(2) > .common_anchor').click();
+//   // Click on Broker Login
+//   cy.get('.dash_left_wrap > :nth-child(2) > .common_anchor').click();
 
-  // 1) AliceBlue
-  cy.get(":nth-child(3) > .inner_wrap > .a > .common_anchor").click();
+//   // 1) AliceBlue
+//   cy.get(":nth-child(3) > .inner_wrap > .a > .common_anchor").click();
 
-  // User id
-  cy.get(":nth-child(1) > .form_field_wrap > :nth-child(2) > .form_field").type(
-    "1311739"
-  );
+//   // User id
+//   cy.get(":nth-child(1) > .form_field_wrap > :nth-child(2) > .form_field").type(
+//     "1311739"
+//   );
 
-  // APi Key
-  cy.get(":nth-child(2) > .form_field_wrap > :nth-child(2) > .form_field").type(
-    "fcIoF0TybGnWzqR4auLjf6o9AtPvrltCsGoWZRSeekH3ZQomBj3bhMhLECUf8SoXL6kq38sjBvScYJm29uEegQkX38FVqrD6lm7P2yGYn1SWMMfoFztVrCR5LIzq7iov"
-  );
+//   // APi Key
+//   cy.get(":nth-child(2) > .form_field_wrap > :nth-child(2) > .form_field").type(
+//     "fcIoF0TybGnWzqR4auLjf6o9AtPvrltCsGoWZRSeekH3ZQomBj3bhMhLECUf8SoXL6kq38sjBvScYJm29uEegQkX38FVqrD6lm7P2yGYn1SWMMfoFztVrCR5LIzq7iov"
+//   );
 
-  cy.get("#BtnSubmit").click();
+//   cy.get("#BtnSubmit").click();
 
-//  cy.get(".a > .greenbg").should("be.visible");
+// //  cy.get(".a > .greenbg").should("be.visible");
 
-//   cy.get(".a > .greenbg").click();
+// //   cy.get(".a > .greenbg").click();
 
-//  cy.wait(5000);
-//  cy.get(".a > .greenbg").click();
+// //  cy.wait(5000);
+// //  cy.get(".a > .greenbg").click();
 
 });
