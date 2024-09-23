@@ -27,7 +27,8 @@ module.exports = defineConfig({
     videoOnFailOnly: true,
     quiet: true,
     debug: true,
-    saveJson: true
+    saveJson: true,
+    enableCode:false,
   },
   e2e: {
     setupNodeEvents(on, config) {
