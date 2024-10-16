@@ -358,7 +358,7 @@ it("Option Backtesting", () => {
   cy.get("#datepicker-4").clear();
   cy.get("div.ng-star-inserted > .text-danger").should("be.visible");
 
-  cy.get("#datepicker-4").type("2024-2023");
+  cy.get("#datepicker-4").type("2024-2024");
 
   //// Click on Run Backtesting
   cy.get(".secondary").click();
