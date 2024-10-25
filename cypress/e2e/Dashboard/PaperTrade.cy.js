@@ -1,7 +1,7 @@
 /// <reference types="cypress"/>
 
 
-it('Nift_Cash', () => {
+it('Ppaper Trade', () => {
 
   cy.viewport(1750, 800);
   cy.clearAllCookies();
