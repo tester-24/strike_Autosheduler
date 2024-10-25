@@ -101,6 +101,7 @@ describe('MarketOverview', () => {
       cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[2]/div/div/div[1]/div[1]/h3[1]/kendo-dropdownlist/button').should('be.visible')
       cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[2]/div/div/div[1]/div[1]/h3[1]/kendo-dropdownlist/button').click()
       // select NiftyMid Cap 100
+       cy.wait(1000)
       cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[6]/span[1]').should('be.visible')
       cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[6]/span[1]').click()
       cy.scrollTo(1000, 0);
