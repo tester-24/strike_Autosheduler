@@ -177,7 +177,8 @@ describe('MarketOverview', () => {
       cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[4]/div/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist').click()
       //cy.scrollTo(0,500)
       //select Nifty small cap 100
-      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[8]/span[1]').should('be.visible')
+      cy.wait(1000)
+      //cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[8]/span[1]').should('be.visible')
       cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[8]/span[1]').click()
 
       // Select Nifty Auto
