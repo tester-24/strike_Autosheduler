@@ -1,7 +1,7 @@
 /// <reference types="cypress"/>
 
 
-it('Ppaper Trade', () => {
+it('Paper Trade', () => {
 
   cy.viewport(1750, 800);
   cy.clearAllCookies();
