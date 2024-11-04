@@ -206,8 +206,8 @@ it("Option Backtesting", () => {
     cy.get('.is_new_leg > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('5');
 
     /////// Trail SL
-    cy.get('#LegBuilder1 > .leg_inner_form_wrap > .is_new_leg > :nth-child(3) > .form_item_wrap > .text-gray-800 > .ml-2').click();
-
+   // cy.get('#LegBuilder1 > .leg_inner_form_wrap > .is_new_leg > :nth-child(3) > .form_item_wrap > .text-gray-800 > .ml-2').click();
+    cy.get('.padding_x20_y10 > .leg_inner_form_wrap > .is_new_leg > :nth-child(3) > .form_item_wrap > .text-gray-800 > .ml-2').click()
     /// X value
     cy.get('.py-0 > .form-control').type('0');
     cy.get('#LegInstrumentMovesValError_0 > .text-danger').should("be.visible");
