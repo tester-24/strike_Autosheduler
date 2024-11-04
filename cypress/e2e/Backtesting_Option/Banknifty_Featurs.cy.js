@@ -331,6 +331,10 @@ it('Banknifty_Feature', () => {
     cy.get('.form-control.mr-2 > .form-control').type('2');
     cy.get(':nth-child(3) > .col-12 > .form_item_wrap > :nth-child(2) > .d-flex > :nth-child(3) > .form-control').type('4');
 
+    cy.get("#datepicker-4").clear();
+    cy.get("div.ng-star-inserted > .text-danger").should("be.visible");
+
+    cy.get("#datepicker-4").type("2024-2024");
 
     //// Click on Run Backtesting
     cy.get('.secondary').click();
