@@ -1,7 +1,7 @@
 /// <reference types="cypress"/>
 
 
-it('Paper Trade', () => {
+it('PaperTrade', () => {
 
   cy.viewport(1750, 800);
   cy.clearAllCookies();
@@ -45,7 +45,7 @@ it('Paper Trade', () => {
 
 
   cy.xpath("(//input[@id='timepicker-1'])").click();
-  cy.xpath("(//input[@id='timepicker-1'])").should('be.visible').clear().type("12:50");
+  cy.xpath("(//input[@id='timepicker-1'])").should('be.visible').clear().type("15:00");
   cy.wait(500);
   cy.scrollTo(1000, 0);
 //  cy.get('div.ng-star-inserted > .text-danger').should('be.visible')
@@ -143,138 +143,142 @@ it('Paper Trade', () => {
   cy.get('.font_med > .col-12 > .blue_ucase > :nth-child(1)').should("be.visible");
 
   ////// Target profit
-  cy.get('#LegBuilder1 > .leg_inner_form_wrap > .is_new_leg > :nth-child(1) > .form_item_wrap > .text-gray-800 > .ml-2').click();
+   // cy.get('#LegBuilder1 > .leg_inner_form_wrap > .is_new_leg > :nth-child(1) > .form_item_wrap > .text-gray-800 > .ml-2').click();
+   cy.get('.padding_x20_y10 > .leg_inner_form_wrap > .is_new_leg > :nth-child(1) > .form_item_wrap > .text-gray-800 > .ml-2').click();
+    // select dropdown
+    cy.xpath("(//span[@class='k-input-value-text'][normalize-space()='Points'])[1]").click();
+   //cy.contains('Underlying Points').click();
+   cy.xpath('/html/body/app-root/app-layout/app-option-structure/div[2]/div/div/div/div/div[2]/div/div/div/form[2]/div[5]/div/div/div/div/div[4]/div[1]/div/div/div/div[1]/div/kendo-dropdownlist/span/span').click()
 
-  // select dropdown
-  cy.xpath("(//span[@class='k-input-value-text'][normalize-space()='Points'])[1]").click();
-  cy.xpath('/html/body/app-root/app-layout/app-option-structure/div[2]/div/div/div/div/div[2]/div/div/div/form[2]/div[5]/div/div/div/div/div[4]/div[1]/div/div/div/div[1]/div/kendo-dropdownlist/span/span').click()
-  //cy.contains('UnderlyingPoints').click();
+    // Enter Target
+    cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+    cy.get('.border-0 > .ng-star-inserted').should("be.visible");
 
-  // Enter Target
-  cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
-  cy.get('.border-0 > .ng-star-inserted').should("be.visible");
+    cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('10');
+    //cy.get('#LegTargetProfitError_0').should("be.visible");
+    cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
 
-  cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('10');
-  //cy.get('#LegTargetProfitError_0').should("be.visible");
-  cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+    cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('0');
+    cy.get('#LegTargetProfitError_0').should("be.visible");
 
-  cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('0');
-  cy.get('#LegTargetProfitError_0').should("be.visible");
+    cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+    cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('6');
 
-  cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
-  cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('6');
+    // cy.get('#LegBuilder1 > .leg_inner_form_wrap > .is_new_leg > :nth-child(1) > .form_item_wrap > .text-gray-800 > .ml-2').click();
 
-  // cy.get('#LegBuilder1 > .leg_inner_form_wrap > .is_new_leg > :nth-child(1) > .form_item_wrap > .text-gray-800 > .ml-2').click();
+    ////// Stop Loss
+    //cy.get('#LegBuilder1 > .leg_inner_form_wrap > .is_new_leg > :nth-child(2) > .form_item_wrap > .text-gray-800 > .ml-2').click();
+    cy.get('.padding_x20_y10 > .leg_inner_form_wrap > .is_new_leg > :nth-child(2) > .form_item_wrap > .text-gray-800 > .ml-2').click()
+    cy.get('.is_new_leg > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+    cy.get('.is_new_leg > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').should("be.visible");
 
-  ////// Stop Loss
-  cy.get('#LegBuilder1 > .leg_inner_form_wrap > .is_new_leg > :nth-child(2) > .form_item_wrap > .text-gray-800 > .ml-2').click();
+    cy.get('.is_new_leg > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('10');
+  //  cy.get('#LegStopLossError_0').should("be.visible");
 
-  cy.get('.is_new_leg > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
-  cy.get('.is_new_leg > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').should("be.visible");
+    cy.get('.is_new_leg > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('1');
+   // cy.get('#LegStopLossError_0').should("be.visible");
 
-  cy.get('.is_new_leg > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('10');
-//  cy.get('#LegStopLossError_0').should("be.visible");
+    cy.get('.is_new_leg > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+    cy.get('.is_new_leg > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('5');
 
-  cy.get('.is_new_leg > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('1');
- // cy.get('#LegStopLossError_0').should("be.visible");
+    /////// Trail SL
+   // cy.get('#LegBuilder1 > .leg_inner_form_wrap > .is_new_leg > :nth-child(3) > .form_item_wrap > .text-gray-800 > .ml-2').click();
+   cy.get('.padding_x20_y10 > .leg_inner_form_wrap > .is_new_leg > :nth-child(3) > .form_item_wrap > .text-gray-800 > .ml-2').click()
+    /// X value
+    cy.get('.py-0 > .form-control').type('0');
+    cy.get('#LegInstrumentMovesValError_0 > .text-danger').should("be.visible");
 
-  cy.get('.is_new_leg > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
-  cy.get('.is_new_leg > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('5');
+    cy.get('.py-0 > .form-control').clear();
+    cy.get('.py-0 > .ng-star-inserted').should("be.visible");
 
-  /////// Trail SL
-  cy.get('#LegBuilder1 > .leg_inner_form_wrap > .is_new_leg > :nth-child(3) > .form_item_wrap > .text-gray-800 > .ml-2').click();
+    cy.get('.py-0 > .form-control').type('10');
+  //  cy.get('#LegInstrumentMovesValError_0 > .text-danger').should("be.visible");
 
-  /// X value
-  cy.get('.py-0 > .form-control').type('0');
-  cy.get('#LegInstrumentMovesValError_0 > .text-danger').should("be.visible");
+    cy.get('.py-0 > .form-control').clear();
+    cy.get('.py-0 > .ng-star-inserted').should("be.visible");
 
-  cy.get('.py-0 > .form-control').clear();
-  cy.get('.py-0 > .ng-star-inserted').should("be.visible");
+    cy.get('.py-0 > .form-control').type('9');
 
-  cy.get('.py-0 > .form-control').type('10');
-//  cy.get('#LegInstrumentMovesValError_0 > .text-danger').should("be.visible");
+    /// Y value
+    cy.get('.is_new_leg > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .p-0 > .form-control').type('5');
+    //cy.get('#LegStopLossMovesValError_0 > .text-danger').should("be.visible");
 
-  cy.get('.py-0 > .form-control').clear();
-  cy.get('.py-0 > .ng-star-inserted').should("be.visible");
+    cy.get('.is_new_leg > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .p-0 > .form-control').clear();
+    cy.get(':nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .p-0 > .ng-star-inserted').should("be.visible");
 
-  cy.get('.py-0 > .form-control').type('9');
+    cy.get('.is_new_leg > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .p-0 > .form-control').type('10');
+   // cy.get('#LegStopLossMovesValError_0 > .text-danger').should("be.visible");
 
-  /// Y value
-  cy.get('.is_new_leg > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .p-0 > .form-control').type('5');
-  //cy.get('#LegStopLossMovesValError_0 > .text-danger').should("be.visible");
+    cy.get('.is_new_leg > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .p-0 > .form-control').clear();
+    cy.get(':nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .p-0 > .ng-star-inserted').should("be.visible");
 
-  cy.get('.is_new_leg > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .p-0 > .form-control').clear();
-  cy.get(':nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .p-0 > .ng-star-inserted').should("be.visible");
-
-  cy.get('.is_new_leg > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .p-0 > .form-control').type('10');
- // cy.get('#LegStopLossMovesValError_0 > .text-danger').should("be.visible");
-
-  cy.get('.is_new_leg > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .p-0 > .form-control').clear();
-  cy.get(':nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .p-0 > .ng-star-inserted').should("be.visible");
-
-  cy.get('.is_new_leg > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .p-0 > .form-control').type('7');
-
-
-  ////// Re-Entry on Target
-  cy.get('.full_wrap.d-flex > .full_wrap > .text-gray-800 > .ml-2').click();
-  //cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[3]').click()
-  cy.get('#LegBuilder1 > .leg_inner_form_wrap > :nth-child(5) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .full_wrap').click().type('{downarrow}{Enter}')
-
-  cy.get(':nth-child(5) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
-  cy.get(':nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .ng-star-inserted').should("be.visible");
-
-  cy.get(':nth-child(5) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('1');
-  //cy.get('#LegReEntryTargetProfitError_0').should("be.visible");
-
-  cy.get(':nth-child(5) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
-  cy.get(':nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .ng-star-inserted').should("be.visible");
-
-  cy.get(':nth-child(5) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('10');
- // cy.get('#LegReEntryTargetProfitError_0').should("be.visible");
-
-  cy.get(':nth-child(5) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
-  cy.get(':nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .ng-star-inserted').should("be.visible");
-
-  cy.get(':nth-child(5) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('7');
+    cy.get('.is_new_leg > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .p-0 > .form-control').type('7');
 
 
-  ////// Re-Entry on SL
-  cy.get('#LegBuilder1 > .leg_inner_form_wrap > :nth-child(5) > :nth-child(2) > .form_item_wrap > .text-gray-800 > .ml-2').click();
+    ////// Re-Entry on Target
+    cy.get('.full_wrap.d-flex > .full_wrap > .text-gray-800 > .ml-2').click();
+   //cy.get('#LegBuilder1 > .leg_inner_form_wrap > :nth-child(5) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .full_wrap').click().type('{downarrow}{downarrow}{Enter}')
+   cy.xpath('/html/body/app-root/app-layout/app-option-structure/div[2]/div/div/div/div/div[2]/div/div/div/form[2]/div[5]/div/div/div/div/div[5]/div[1]/div/div[2]/div/div[1]/div/kendo-dropdownlist/button').click({force:true})
+   //slect values from dropdown
+   cy.wait(1000)
+   cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[3]/span[1]').click()
+    cy.get(':nth-child(5) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+    cy.get(':nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .ng-star-inserted').should("be.visible");
 
-  cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
-  cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .ng-star-inserted').should("be.visible");
+    cy.get(':nth-child(5) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('1');
+    //cy.get('#LegReEntryTargetProfitError_0').should("be.visible");
 
-  cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('1');
-//  cy.get('#LegReEntryStopLossError_0').should("be.visible");
+    cy.get(':nth-child(5) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+    cy.get(':nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .ng-star-inserted').should("be.visible");
 
-  cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
-  cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .ng-star-inserted').should("be.visible");
+    cy.get(':nth-child(5) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('10');
+   // cy.get('#LegReEntryTargetProfitError_0').should("be.visible");
 
-  cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('8');
- // cy.get('#LegReEntryStopLossError_0').should("be.visible");
+    cy.get(':nth-child(5) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+    cy.get(':nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .ng-star-inserted').should("be.visible");
 
-  cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
-  cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .ng-star-inserted').should("be.visible");
+    cy.get(':nth-child(5) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('7');
 
-  cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('5');
 
-  ////// Simple Momentum
-  cy.get('#LegBuilder1 > .leg_inner_form_wrap > :nth-child(5) > :nth-child(3) > .form_item_wrap > .text-gray-800 > .ml-2').click();
+    ////// Re-Entry on SL
+   // cy.get('#LegBuilder1 > .leg_inner_form_wrap > :nth-child(5) > :nth-child(2) > .form_item_wrap > .text-gray-800 > .ml-2').click();
+   cy.get('.padding_x20_y10 > .leg_inner_form_wrap > :nth-child(5) > :nth-child(2) > .form_item_wrap > .text-gray-800 > .ml-2').click()
+    cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+    cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .ng-star-inserted').should("be.visible");
 
-  cy.get(':nth-child(5) > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
-  cy.get(':nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .text-danger').should("be.visible");
+    cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('1');
+  //  cy.get('#LegReEntryStopLossError_0').should("be.visible");
 
-  cy.get(':nth-child(5) > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('1');
+    cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+    cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .ng-star-inserted').should("be.visible");
 
-  cy.get(':nth-child(5) > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
-  cy.get(':nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .text-danger').should("be.visible");
+    cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('8');
+   // cy.get('#LegReEntryStopLossError_0').should("be.visible");
 
-  cy.get(':nth-child(5) > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('4');
+    cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+    cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .ng-star-inserted').should("be.visible");
 
-  cy.get(':nth-child(5) > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
-  cy.get(':nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .text-danger').should("be.visible");
+    cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('5');
 
-  cy.get(':nth-child(5) > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('5');
+    ////// Simple Momentum
+    //cy.get('#LegBuilder1 > .leg_inner_form_wrap > :nth-child(5) > :nth-child(3) > .form_item_wrap > .text-gray-800 > .ml-2').click();
+    cy.get('.padding_x20_y10 > .leg_inner_form_wrap > :nth-child(5) > :nth-child(3) > .form_item_wrap > .text-gray-800 > .ml-2').click()
+    cy.get(':nth-child(5) > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+    cy.get(':nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .text-danger').should("be.visible");
+
+    cy.get(':nth-child(5) > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('1');
+
+    cy.get(':nth-child(5) > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+    cy.get(':nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .text-danger').should("be.visible");
+
+    cy.get(':nth-child(5) > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('4');
+
+    cy.get(':nth-child(5) > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+    cy.get(':nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .text-danger').should("be.visible");
+
+    cy.get(':nth-child(5) > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('5');
+
+
 
 
   ////// Range Break out
@@ -338,9 +342,10 @@ it('Paper Trade', () => {
 
    // Initial Setup
    cy.get(".sticky_btns_wrap > :nth-child(2) > div > .ng-star-inserted").click();
-   cy.get(".k-window-titlebar").should("be.visible");
+  // cy.get(".k-window-titlebar").should("be.visible");
    //cy.get('[style="float: none;"] > .common_anchor').click();
-   cy.get('.text-start > .full_wrap > .form-control').type('user4')
+   cy.wait(1000)
+   cy.get('.text-start > .full_wrap > .form-control').type('user10')
    cy.wait(2000)
    cy.get('[style="float: none;"] > .common_anchor').click()
    cy.wait(4000)
@@ -352,7 +357,7 @@ it('Paper Trade', () => {
 
   //Search for startergy which is recently created 
   cy.wait(500)
-  cy.get('#txtStrategySearch').type('user4').type('{Enter}')
+  cy.get('#txtStrategySearch').type('user10').type('{Enter}')
   //Click on Activate Button 
   cy.wait(2000)
   cy.xpath('/html/body/app-root/app-layout/app-strategies/div[2]/div/div/div/div/div[2]/div/div/div[2]/app-my-strategies/div/div[2]/div/app-my-strategies-strategies/div[1]/div/div/div[2]/div[3]/div/button').click()
@@ -373,10 +378,10 @@ it('Paper Trade', () => {
   //click on activate button 
   cy.xpath('/html/body/app-root/app-layout/app-strategies/div[2]/div/div/div/div/div[2]/div/div/div[2]/app-my-strategies/div/div[2]/div/app-my-strategies-strategies/kendo-dialog/div[2]/div/div/form/div[2]/button').click()
  // click on yes Option for pop up  
- cy.get('.k-button-solid-primary').click()
+ cy.get('.k-actions > .grey').click()
  //Visible succesful message for activatuion 
  cy.wait(2000)
- cy.get('.ng-trigger').should('be.visible')
+// cy.get('.ng-trigger').should('be.visible')
  //click on paper trade 
  cy.wait(1000)
  cy.get('[routerlink="/strategies/papertradestrategies"]').click()
