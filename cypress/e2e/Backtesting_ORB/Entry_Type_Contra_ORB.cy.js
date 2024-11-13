@@ -42,8 +42,8 @@ it("Option Backtesting", () => {
      
      //ORB Basic Functionalities 
      //Click on  Symbol dropdown
-     cy.wait(1500)
-     cy.get(':nth-child(1) > :nth-child(1) > .form_item_wrap > .full_wrap > .form-control').click()
+     cy.wait(3000)
+     cy.get(':nth-child(1) > :nth-child(1) > .form_item_wrap > .full_wrap > .form-control').click({force:true})
      //select symbol 3MINDIA
      cy.wait(500)
      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[3]').click()
@@ -61,8 +61,8 @@ it("Option Backtesting", () => {
      cy.xpath('/html/body/app-root/app-layout/app-orb-structure/div/div/div/div/div/div/div[2]/div/div/form[2]/div[1]/div/div[1]/div[2]/div/div/div/kendo-dropdownlist').click()
     
      // select Contra type
-     cy.wait(500)
-     cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[2]').click()
+     cy.wait(1000)
+     cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[2]').click({force:true})
       //Validation for Range strat time
       cy.get('#timepicker-1').clear()
       //Validation message 
