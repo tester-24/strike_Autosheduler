@@ -42,7 +42,7 @@ it("Option Backtesting", () => {
      
      //ORB Basic Functionalities 
      //Click on  Symbol dropdown
-     cy.wait(1000)
+     cy.wait(3000)
     // cy.get(':nth-child(1) > :nth-child(1) > .form_item_wrap > .full_wrap > .form-control').click({force:true})
   //  cy.get(':nth-child(1) > .leg_inner_form_wrap > :nth-child(1) > :nth-child(3)').click({force:true})
      cy.xpath('/html/body/app-root/app-layout/app-orb-structure/div/div/div/div/div/div/div[2]/div/div/form[2]/div[1]/div/div[1]/div[1]/div/div/kendo-multiselect/kendo-taglist/kendo-searchbar/input').click()
