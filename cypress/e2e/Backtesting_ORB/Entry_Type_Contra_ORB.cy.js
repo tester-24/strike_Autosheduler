@@ -42,8 +42,9 @@ it("Option Backtesting", () => {
      
      //ORB Basic Functionalities 
      //Click on  Symbol dropdown
-     cy.wait(3000)
-     cy.get(':nth-child(1) > :nth-child(1) > .form_item_wrap > .full_wrap > .form-control').click({force:true})
+     cy.wait(1000)
+    // cy.get(':nth-child(1) > :nth-child(1) > .form_item_wrap > .full_wrap > .form-control').click({force:true})
+    cy.get(':nth-child(1) > .leg_inner_form_wrap > :nth-child(1) > :nth-child(3)').click({force:true})
      //select symbol 3MINDIA
      cy.wait(500)
      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[3]').click()
