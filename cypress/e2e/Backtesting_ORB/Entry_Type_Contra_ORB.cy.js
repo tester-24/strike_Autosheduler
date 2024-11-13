@@ -33,8 +33,8 @@ it("Option Backtesting", () => {
       cy.xpath('/html/body/app-root/app-layout/app-headerpanel/kendo-dialog/div[2]/div/div/div/div/div/div/kendo-dropdownlist').click()
  
      // Click on Option dropdown
-      cy.wait(500)
-      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[1]').click()
+      cy.wait(1000)
+      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[1]').click({force:true})
 
      // Click on Proceed
      cy.wait(1500);
