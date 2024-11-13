@@ -11,7 +11,7 @@ it("Option Backtesting", () => {
         });
   
         // cy.reload();
-        cy.wait(5500);
+        cy.wait(1000);
         cy.get(".nav-link").click();
   
         //Login Flow
@@ -26,7 +26,7 @@ it("Option Backtesting", () => {
         cy.log("Login successful");
   
          // Click on Backtesting
-        cy.wait(5000);
+        cy.wait(1000);
         cy.get('#navBarWeb > :nth-child(5) > #Backtesting').click();
   
          //click on dropdown
@@ -42,8 +42,8 @@ it("Option Backtesting", () => {
         
         //ORB Basic Functionalities 
         //Click on  Symbol dropdown
-        cy.wait(1500)
-        cy.get(':nth-child(1) > :nth-child(1) > .form_item_wrap > .full_wrap > .form-control').click()
+        cy.wait(2000)
+        cy.get(':nth-child(1) > :nth-child(1) > .form_item_wrap > .full_wrap > .form-control').click({force:true})
         //select symbol 3MINDIA
         cy.wait(500)
         cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[3]').click()
@@ -149,7 +149,7 @@ it("Option Backtesting", () => {
        //click on runbacktest
        cy.get('.secondary').click()
        //validation for data 
-       cy.wait(10000)
+       cy.wait(7000)
        cy.get('#BackTestResultView > :nth-child(2)').should('be.visible')
 
 })  
