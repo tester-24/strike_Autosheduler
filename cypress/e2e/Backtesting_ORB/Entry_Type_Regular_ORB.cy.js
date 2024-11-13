@@ -42,6 +42,7 @@ it("Option Backtesting", () => {
         
         //ORB Basic Functionalities 
         //Click on  Symbol dropdown
+        cy.wait(1000)
         cy.get(':nth-child(1) > :nth-child(1) > .form_item_wrap > .full_wrap > .form-control').click()
         //select symbol 3MINDIA
         cy.wait(500)
