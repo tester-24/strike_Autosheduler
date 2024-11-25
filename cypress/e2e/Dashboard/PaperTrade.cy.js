@@ -376,7 +376,9 @@ it('PaperTrade', () => {
   //click on check box
   cy.get('.form-check-input').click()
   // type number of items
-  cy.get('.ps-0 > .form-control').clear().type(1)
+//  cy.get('.ps-0 > .form-control').clear().type(1)
+   cy.xpath('/html/body/app-root/app-layout/app-strategies/div[2]/div/div/div/div/div[2]/div/div/div[2]/app-my-strategies/div/div[2]/div/app-my-strategies-strategies/kendo-dialog/div[2]/div/div/form/table/tbody/tr/td[3]/div/kendo-numerictextbox/input').clear()
+  cy.xpath('/html/body/app-root/app-layout/app-strategies/div[2]/div/div/div/div/div[2]/div/div/div[2]/app-my-strategies/div/div[2]/div/app-my-strategies-strategies/kendo-dialog/div[2]/div/div/form/table/tbody/tr/td[3]/div/kendo-numerictextbox/input').type(1)
   //click on activate button 
   cy.xpath('/html/body/app-root/app-layout/app-strategies/div[2]/div/div/div/div/div[2]/div/div/div[2]/app-my-strategies/div/div[2]/div/app-my-strategies-strategies/kendo-dialog/div[2]/div/div/form/div[2]/button').click()
  // click on yes Option for pop up  
@@ -386,7 +388,8 @@ it('PaperTrade', () => {
 // cy.get('.ng-trigger').should('be.visible')
  //click on paper trade 
  cy.wait(1000)
- cy.get('[routerlink="/strategies/papertradestrategies"]').click()
+ //cy.get('[routerlink="/strategies/papertradestrategies"]').click()
+   cy.get('.c_boxsedow > div.full_wrap > :nth-child(4)').click()
 
    // cy.get('.dash_left_wrap > :nth-child(2) > div.full_wrap > [routerlink="/strategies/papertradestrategies"]').click()
    // Click on Activate
