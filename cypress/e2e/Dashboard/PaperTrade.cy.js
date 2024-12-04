@@ -41,7 +41,7 @@ it('PaperTrade', () => {
 
   // 4) Entry Time
   cy.wait(1500);
-  cy.xpath("(//kendo-icon[@class='k-i-clock k-button-icon k-icon ng-star-inserted'])[2]").click({force:true});
+  cy.xpath( '/html/body/app-root/app-layout/app-option-structure/div[2]/div/div/div/div/div[2]/div/div/div/form[2]/div[1]/div/div/div[2]/div[2]/div/div/div/kendo-timepicker/button/kendo-icon-wrapper').click({force:true});
 
 
   cy.xpath("(//input[@id='timepicker-1'])").click();
@@ -125,8 +125,6 @@ it('PaperTrade', () => {
   // cy.wait(500);
   // cy.get('#legBuilder > .leg_inner_form_wrap > :nth-child(2) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .full_wrap > .form-control').should('be.visible').focus().type('1000');
   // cy.scrollTo(20, 20);
-   cy.xpath('/html/body/app-root/app-layout/app-option-structure/div[2]/div/div/div/div/div[2]/div/div/div/form[2]/div[3]/div/div[2]/div[1]/div/div/div/kendo-numerictextbox/input').clear()
-     cy.xpath('/html/body/app-root/app-layout/app-option-structure/div[2]/div/div/div/div/div[2]/div/div/div/form[2]/div[3]/div/div[2]/div[1]/div/div/div/kendo-numerictextbox/input').type(5)
 
   //2) Expiry
   cy.wait(3000)
@@ -223,7 +221,7 @@ it('PaperTrade', () => {
    cy.xpath('/html/body/app-root/app-layout/app-option-structure/div[2]/div/div/div/div/div[2]/div/div/div/form[2]/div[5]/div/div/div/div/div[5]/div[1]/div/div[2]/div/div[1]/div/kendo-dropdownlist/button').click({force:true})
    //slect values from dropdown
    cy.wait(1000)
-   cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[3]/span[1]').click()
+   cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[1]').click()
     cy.get(':nth-child(5) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
     cy.get(':nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .ng-star-inserted').should("be.visible");
 
@@ -376,8 +374,9 @@ it('PaperTrade', () => {
   //click on check box
   cy.get('.form-check-input').click()
   // type number of items
-//  cy.get('.ps-0 > .form-control').clear().type(1)
-   cy.xpath('/html/body/app-root/app-layout/app-strategies/div[2]/div/div/div/div/div[2]/div/div/div[2]/app-my-strategies/div/div[2]/div/app-my-strategies-strategies/kendo-dialog/div[2]/div/div/form/table/tbody/tr/td[3]/div/kendo-numerictextbox/input').clear()
+  //cy.get('.ps-0 > .form-control').clear().type(1)
+ 
+  cy.xpath('/html/body/app-root/app-layout/app-strategies/div[2]/div/div/div/div/div[2]/div/div/div[2]/app-my-strategies/div/div[2]/div/app-my-strategies-strategies/kendo-dialog/div[2]/div/div/form/table/tbody/tr/td[3]/div/kendo-numerictextbox/input').clear()
   cy.xpath('/html/body/app-root/app-layout/app-strategies/div[2]/div/div/div/div/div[2]/div/div/div[2]/app-my-strategies/div/div[2]/div/app-my-strategies-strategies/kendo-dialog/div[2]/div/div/form/table/tbody/tr/td[3]/div/kendo-numerictextbox/input').type(1)
   //click on activate button 
   cy.xpath('/html/body/app-root/app-layout/app-strategies/div[2]/div/div/div/div/div[2]/div/div/div[2]/app-my-strategies/div/div[2]/div/app-my-strategies-strategies/kendo-dialog/div[2]/div/div/form/div[2]/button').click()
@@ -389,7 +388,6 @@ it('PaperTrade', () => {
  //click on paper trade 
  cy.wait(1000)
  //cy.get('[routerlink="/strategies/papertradestrategies"]').click()
-   cy.get('.c_boxsedow > div.full_wrap > :nth-child(4)').click()
 
    // cy.get('.dash_left_wrap > :nth-child(2) > div.full_wrap > [routerlink="/strategies/papertradestrategies"]').click()
    // Click on Activate
