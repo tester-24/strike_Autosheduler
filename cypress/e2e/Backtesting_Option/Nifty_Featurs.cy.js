@@ -6,7 +6,7 @@ it('Nifty Feature', () => {
     cy.viewport(1750, 800);
     cy.clearAllCookies();
     cy.visit('https://strike.jainam.in/#/');
-    cy.reload();
+    //cy.reload();
     cy.wait(4000);
     cy.get('.nav-link').click()
 
@@ -42,10 +42,10 @@ it('Nifty Feature', () => {
 
     // 4) Entry Time
     cy.wait(1500);
-    cy.xpath("(//kendo-icon[@class='k-i-clock k-button-icon k-icon ng-star-inserted'])[2]").click({force:true});
+    cy.xpath( '/html/body/app-root/app-layout/app-option-structure/div[2]/div/div/div/div/div[2]/div/div/div/form[2]/div[1]/div/div/div[2]/div[2]/div/div/div/kendo-timepicker/button/kendo-icon-wrapper').click({force:true});
 
 
-    cy.xpath("(//input[@id='timepicker-1'])[1]").click();
+    cy.xpath("(//input[@id='timepicker-1'])[1]").click({force:true});
     cy.xpath("(//input[@id='timepicker-1'])[1]").should('be.visible').type("09.10");
     cy.scrollTo(1000, 0);
     cy.get('div.ng-star-inserted > .text-danger').should('be.visible')
@@ -117,16 +117,14 @@ it('Nifty Feature', () => {
 
    // Log Builder
     //1) Total Lot
-    // cy.get('#legBuilder > .leg_inner_form_wrap > :nth-child(2) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .full_wrap > .form-control').clear();
-    // cy.get('#legBuilder > .leg_inner_form_wrap > :nth-child(2) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .full_wrap > .form-control').should('be.visible').focus().type('1000');
-    // cy.scrollTo(20, 20);
+    
+    cy.get('.atrnumerictectbox').type('1000');
+    cy.scrollTo(20, 20);
 
-    // cy.get('#legBuilder > .leg_inner_form_wrap > :nth-child(2) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .full_wrap > .form-control').clear();
-    // cy.wait(500);
-    // cy.get('#legBuilder > .leg_inner_form_wrap > :nth-child(2) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .full_wrap > .form-control').should('be.visible').focus().type('1000');
-    // cy.scrollTo(20, 20);
-     cy.xpath('/html/body/app-root/app-layout/app-option-structure/div[2]/div/div/div/div/div[2]/div/div/div/form[2]/div[3]/div/div[2]/div[1]/div/div/div/kendo-numerictextbox/input').clear()
-     cy.xpath('/html/body/app-root/app-layout/app-option-structure/div[2]/div/div/div/div/div[2]/div/div/div/form[2]/div[3]/div/div[2]/div[1]/div/div/div/kendo-numerictextbox/input').type(5)
+   
+    cy.wait(500);
+    cy.get('.atrnumerictectbox').type('1000').type('5');
+    cy.scrollTo(20, 20);
 
     //2) Expiry
     cy.wait(3000)
@@ -144,7 +142,7 @@ it('Nifty Feature', () => {
     // verify leg 1 is created or not
     cy.get('.font_med > .col-12 > .blue_ucase > :nth-child(1)').should("be.visible");
 
-  ////// Target profit
+   ////// Target profit
    // cy.get('#LegBuilder1 > .leg_inner_form_wrap > .is_new_leg > :nth-child(1) > .form_item_wrap > .text-gray-800 > .ml-2').click();
    cy.get('.padding_x20_y10 > .leg_inner_form_wrap > .is_new_leg > :nth-child(1) > .form_item_wrap > .text-gray-800 > .ml-2').click();
     // select dropdown
@@ -223,7 +221,7 @@ it('Nifty Feature', () => {
    cy.xpath('/html/body/app-root/app-layout/app-option-structure/div[2]/div/div/div/div/div[2]/div/div/div/form[2]/div[5]/div/div/div/div/div[5]/div[1]/div/div[2]/div/div[1]/div/kendo-dropdownlist/button').click({force:true})
    //slect values from dropdown
    cy.wait(1000)
-   cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[3]/span[1]').click()
+   cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[1]').click()
     cy.get(':nth-child(5) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
     cy.get(':nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .ng-star-inserted').should("be.visible");
 
@@ -282,6 +280,7 @@ it('Nifty Feature', () => {
 
 
 
+
     ////// Range Break out
   //  cy.get('#LegBuilder1 > .leg_inner_form_wrap > :nth-child(6) > .pe-0 > .form_item_wrap > .text-gray-800 > .ml-2').click();
 
@@ -335,15 +334,16 @@ it('Nifty Feature', () => {
 
     cy.get('.form-control.mr-2 > .form-control').type('2');
     cy.get(':nth-child(3) > .col-12 > .form_item_wrap > :nth-child(2) > .d-flex > :nth-child(3) > .form-control').type('4');
-        cy.get("#datepicker-4").clear();
+
+    cy.get("#datepicker-4").clear();
     cy.get("div.ng-star-inserted > .text-danger").should("be.visible");
   
     cy.get("#datepicker-4").type("2024-2024");
- 
     //// Click on Run Backtesting
     cy.get('.secondary').click();
 
     cy.get('.loader_numb').should("be.visible");
 
-  
+   
+
 })
