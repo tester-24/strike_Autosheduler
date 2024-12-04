@@ -37,12 +37,13 @@ it('Broker_Login', () => {
      cy.xpath('/html/body/app-root/app-layout/app-broker-dynamic/ngx-dynamic-hooks/app-odin/div/div/div/div/div/div/div[2]/div/div/div/div/form/fieldset/div/div[1]/kendo-formfield/div/kendo-textbox/input').clear().type('M3903')
    
     // Enter Password
-   cy.xpath('/html/body/app-root/app-layout/app-broker-dynamic/ngx-dynamic-hooks/app-odin/div/div/div/div/div/div/div[2]/div/div/div/div/form/fieldset/div/div[2]/kendo-formfield/div/div/kendo-textbox/input').type('A@1111111111')
+   cy.xpath('/html/body/app-root/app-layout/app-broker-dynamic/ngx-dynamic-hooks/app-odin/div/div/div/div/div/div/div[2]/div/div/div/div/form/fieldset/div/div[2]/kendo-formfield/div/div/kendo-textbox/input').type('Jainam@123')
      //  Enter FA
      cy.xpath('/html/body/app-root/app-layout/app-broker-dynamic/ngx-dynamic-hooks/app-odin/div/div/div/div/div/div/div[2]/div/div/div/div/form/fieldset/div/div[3]/kendo-formfield/div/kendo-textbox/input').type('AOZPK2130G')
      //Click on Submit Button
+  
      cy.get('#BtnSubmit').click({timeout:1500})
-     cy.wait(9000)
+     cy.wait(10000)
      //verify success message for login
      cy.get('.ng-trigger').should('be.visible')
      cy.log('Setup Successful')
@@ -88,7 +89,7 @@ it('Broker_Login', () => {
     cy.xpath('/html/body/app-root/app-layout/app-broker-dynamic/ngx-dynamic-hooks/app-odin/div/div/div/div/div/div/div[2]/div/div/div/div/form/fieldset/div/div[3]/kendo-formfield/div/kendo-textbox/input').type('AOZPK2130G')
     //Click on Submit Button
     cy.get('#BtnSubmit').click({timeout:1500})
-    cy.wait(9000)
+    cy.wait(10000)
     cy.log('Set up Successfully Done ')
      // click on Logged In tab   
     cy.get(':nth-child(2) > .nav-link').click()
