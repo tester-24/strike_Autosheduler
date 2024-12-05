@@ -200,26 +200,23 @@ describe('MarketOverview', () => {
       cy.wait(500)
       cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[5]/span[1]').click()
 
-      // //52 week low dropdown
-      // cy.wait(500)
-      // cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[5]/div/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist/button').should('be.visible')
-      // cy.wait(1000)
-      // cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[18]/span[1]').click({force:true})
+      //52 week low dropdown
+      cy.wait(500)
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[5]/div/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist').should('be.visible')
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[5]/div/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist').click()
+      cy.wait(1000)
+      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[18]/span[1]').click({force:true})
 
-      // //select nifty next 50
-      // cy.wait(500)
- 
-      // cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[11]/span[1]').click({force:true
+      //select nifty next 50
+      cy.wait(500)
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[5]/div/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist').click()
+      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[15]/span[1]').click({force:true})
 
-      // })
-
-      // //select nifty it
-      // cy.wait(500)
- 
-      // cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[5]/div/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist').click({force:true})
-      // cy.wait(500)
- 
-      // cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[10]/span[1]').click({ force: true })
+      //select nifty it
+      cy.wait(500)
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[5]/div/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist').click({force:true})
+      cy.wait(500)
+      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[10]/span[1]').click({ force: true })
     });
   });
 
