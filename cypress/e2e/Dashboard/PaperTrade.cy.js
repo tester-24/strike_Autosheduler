@@ -360,7 +360,8 @@ it('PaperTrade', () => {
   cy.get('#txtStrategySearch').type('user10').type('{Enter}')
   //Click on Activate Button 
   cy.wait(2000)
-  cy.xpath('/html/body/app-root/app-layout/app-strategies/div[2]/div/div/div/div/div[2]/div/div/div[2]/app-my-strategies/div/div[2]/div/app-my-strategies-strategies/div[1]/div/div/div[2]/div[3]/div/button').click()
+  cy.xpath('/html/body/app-root/app-layout/app-strategies/div[2]/div/div/div/div/div[2]/div/div/div[2]/app-my-strategies/div/div[2]/div/app-my-strategies-strategies/div[1]/div[1]/div/div[2]/div[3]/div/button').click()
+  //cy.xpath('/html/body/app-root/app-layout/app-strategies/div[2]/div/div/div/div/div[2]/div/div/div[2]/app-my-strategies/div/div[2]/div/app-my-strategies-strategies/div[1]/div/div/div[2]/div[3]/div/button').click()
   //cy.get('#strategy\.strategyId > .btn').click()
   cy.wait(2000)
   
