@@ -33,12 +33,13 @@ it('Broker_Login', () => {
      //Click on Odin Setup
      // cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-strategies[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/app-broker-login[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/div[1]/div[2]/a[1]').click()
      cy.get(':nth-child(1) > .inner_wrap > .a > .common_anchor').click({timeout:500})
+     
      //Enter User Id 
      cy.xpath('/html/body/app-root/app-layout/app-broker-dynamic/ngx-dynamic-hooks/app-odin/div/div/div/div/div/div/div[2]/div/div/div/div/form/fieldset/div/div[1]/kendo-formfield/div/kendo-textbox/input').clear().type('M3903')
    
     // Enter Password
-   cy.xpath('/html/body/app-root/app-layout/app-broker-dynamic/ngx-dynamic-hooks/app-odin/div/div/div/div/div/div/div[2]/div/div/div/div/form/fieldset/div/div[2]/kendo-formfield/div/div/kendo-textbox/input').type('Jainam@12345')
-     //  Enter FA
+     cy.xpath('/html/body/app-root/app-layout/app-broker-dynamic/ngx-dynamic-hooks/app-odin/div/div/div/div/div/div/div[2]/div/div/div/div/form/fieldset/div/div[2]/kendo-formfield/div/div/kendo-textbox/input').type('Jainam@12345')
+    //  Enter FA
      cy.xpath('/html/body/app-root/app-layout/app-broker-dynamic/ngx-dynamic-hooks/app-odin/div/div/div/div/div/div/div[2]/div/div/div/div/form/fieldset/div/div[3]/kendo-formfield/div/kendo-textbox/input').type('AOZPK2130G')
      //Click on Submit Button
      cy.get('#BtnSubmit').click({timeout:1500})
@@ -63,14 +64,14 @@ it('Broker_Login', () => {
     // verify Disconnect button is visible
     cy.get('.pinkbg').should('be.visible')
    // click on disconnect button
-   cy.get('.pinkbg').click()
+   cy.get('.pinkbg').click({force:true})
   
    //click on yes option 
-   cy.get('.grey').click()  
+    cy.get('.grey').click({force:true})  
     // verify message broker disconnect successfully
     cy.wait(1000)
     cy.get('.ng-trigger').should('be.visible') 
-   cy.log('Broker disconnected sucessfully')
+    cy.log('Broker disconnected sucessfully')
 
 
   
@@ -80,12 +81,12 @@ it('Broker_Login', () => {
     cy.get('.nav > :nth-child(1) > .nav-link').click()
     //Click on Odin Setup
      // cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-strategies[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/app-broker-login[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/div[1]/div[2]/a[1]').click()
-    cy.get(':nth-child(1) > .inner_wrap > .a > .common_anchor').click({timeout:500})
+    cy.get(':nth-child(1) > .inner_wrap > .a > .common_anchor').click({timeout:1000})
     //Enter User Id 
     cy.xpath('/html/body/app-root/app-layout/app-broker-dynamic/ngx-dynamic-hooks/app-odin/div/div/div/div/div/div/div[2]/div/div/div/div/form/fieldset/div/div[1]/kendo-formfield/div/kendo-textbox/input').clear().type('M3903')
-  
-   // Enter Password
-  cy.xpath('/html/body/app-root/app-layout/app-broker-dynamic/ngx-dynamic-hooks/app-odin/div/div/div/div/div/div/div[2]/div/div/div/div/form/fieldset/div/div[2]/kendo-formfield/div/div/kendo-textbox/input').type('Jainam@12345')
+   
+    // Enter Password
+    cy.xpath('/html/body/app-root/app-layout/app-broker-dynamic/ngx-dynamic-hooks/app-odin/div/div/div/div/div/div/div[2]/div/div/div/div/form/fieldset/div/div[2]/kendo-formfield/div/div/kendo-textbox/input').type('Jainam@12345')
     //  Enter FA
     cy.xpath('/html/body/app-root/app-layout/app-broker-dynamic/ngx-dynamic-hooks/app-odin/div/div/div/div/div/div/div[2]/div/div/div/div/form/fieldset/div/div[3]/kendo-formfield/div/kendo-textbox/input').type('AOZPK2130G')
     //Click on Submit Button
