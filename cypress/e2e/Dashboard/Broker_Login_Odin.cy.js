@@ -24,7 +24,7 @@ it('Broker_Login', () => {
     //Click on Broker Login
     cy.wait(1000)
     //cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-strategies[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/a[1]').click({setTimeout:2000})
-    cy.get('.dash_left_wrap > .common_anchor').click({timeout:500})
+    cy.get('.dash_left_wrap > .common_anchor').click({force:true},{timeout:500})
     
     
    
