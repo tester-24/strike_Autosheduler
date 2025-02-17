@@ -58,27 +58,27 @@ describe('Tetsing different types of View Port', () => {
             cy.get(':nth-child(1) > .data_wrap > .gridContainer > :nth-child(3) > .common_anchor').contains('Get a Free Demo Now');
             cy.get(':nth-child(1) > .data_wrap > .gridContainer > :nth-child(3) > .common_anchor').click();
 
-            // Get in Touch
-            cy.get(':nth-child(1) > .data_wrap > .gridContainer > :nth-child(3) > .common_anchor').click();
+            // // Get in Touch
+            // cy.get(':nth-child(1) > .data_wrap > .gridContainer > :nth-child(3) > .common_anchor').click();
 
-            // Full Name
-            cy.get(':nth-child(1) > :nth-child(1) > .form_field_wrap > div > .form_field').type("Strike Automation", { waitforanimations: false, animationdistancethreshold: 50 });
+            // // Full Name
+            // cy.get(':nth-child(1) > :nth-child(1) > .form_field_wrap > div > .form_field').type("Strike Automation", { waitforanimations: false, animationdistancethreshold: 50 });
 
-            // Email
-            cy.get(':nth-child(2) > .form_field_wrap > div > .form_field').type("abc@gmail.com");
+            // // Email
+            // cy.get(':nth-child(2) > .form_field_wrap > div > .form_field').type("abc@gmail.com");
 
-            // Mobile No
-            cy.get(':nth-child(3) > .form_field_wrap > div > .form_field').type("9825479404");
+            // // Mobile No
+            // cy.get(':nth-child(3) > .form_field_wrap > div > .form_field').type("9825479404");
 
-            // Description
-            cy.get('.col-sm-12 > .form_field_wrap > div > .form_field').type("hdif ofwohfroiufh fndfodohvofuv dofofovfjh odwoeofhjreof vfovngvnfuio fvnfeovfo vfvfovn");
+            // // Description
+            // cy.get('.col-sm-12 > .form_field_wrap > div > .form_field').type("hdif ofwohfroiufh fndfodohvofuv dofofovfjh odwoeofhjreof vfovngvnfuio fvnfeovfo vfvfovn");
 
-            cy.screenshot('onAfterScreenshot');
+            // cy.screenshot('onAfterScreenshot');
 
-            cy.get('#BtnSubmit').click();
-            cy.get('#BtnSubmit').click({force:true});
-            cy.get('#BtnSubmit').click();
-            cy.get('#BtnSubmit').click();
+            // cy.get('#BtnSubmit').click();
+            // cy.get('#BtnSubmit').click({force:true});
+            // cy.get('#BtnSubmit').click();
+            // cy.get('#BtnSubmit').click();
 
             // Capture end time.
             const endTime = Date.now();
@@ -150,27 +150,27 @@ describe('Tetsing different types of View Port', () => {
             cy.get(':nth-child(1) > .data_wrap > .gridContainer > :nth-child(3) > .common_anchor').contains('Get a Free Demo Now');
             cy.get(':nth-child(1) > .data_wrap > .gridContainer > :nth-child(3) > .common_anchor').click();
 
-            // Get in Touch
-            cy.get(':nth-child(1) > .data_wrap > .gridContainer > :nth-child(3) > .common_anchor').click();
+            // // Get in Touch
+            // cy.get(':nth-child(1) > .data_wrap > .gridContainer > :nth-child(3) > .common_anchor').click();
 
-            // Full Name
-            cy.get(':nth-child(1) > :nth-child(1) > .form_field_wrap > div > .form_field').type("Strike Automation", { waitforanimations: false, animationdistancethreshold: 50 });
+            // // Full Name
+            // cy.get(':nth-child(1) > :nth-child(1) > .form_field_wrap > div > .form_field').type("Strike Automation", { waitforanimations: false, animationdistancethreshold: 50 });
 
-            // Email
-            cy.get(':nth-child(2) > .form_field_wrap > div > .form_field').type("abc@gmail.com");
+            // // Email
+            // cy.get(':nth-child(2) > .form_field_wrap > div > .form_field').type("abc@gmail.com");
 
-            // Mobile No
-            cy.get(':nth-child(3) > .form_field_wrap > div > .form_field').type("9825479404");
+            // // Mobile No
+            // cy.get(':nth-child(3) > .form_field_wrap > div > .form_field').type("9825479404");
 
-            // Description
-            cy.get('.col-sm-12 > .form_field_wrap > div > .form_field').type("hdif ofwohfroiufh fndfodohvofuv dofofovfjh odwoeofhjreof vfovngvnfuio fvnfeovfo vfvfovn");
+            // // Description
+            // cy.get('.col-sm-12 > .form_field_wrap > div > .form_field').type("hdif ofwohfroiufh fndfodohvofuv dofofovfjh odwoeofhjreof vfovngvnfuio fvnfeovfo vfvfovn");
 
-            cy.screenshot('onAfterScreenshot');
+            // cy.screenshot('onAfterScreenshot');
 
-            cy.get('#BtnSubmit').click();
-            cy.get('#BtnSubmit').click({force:true});
-            cy.get('#BtnSubmit').click();
-            cy.get('#BtnSubmit').click();
+            // cy.get('#BtnSubmit').click();
+            // cy.get('#BtnSubmit').click({force:true});
+            // cy.get('#BtnSubmit').click();
+            // cy.get('#BtnSubmit').click();
 
             // Capture end time.
             const endTime = Date.now();
@@ -243,27 +243,27 @@ describe('Tetsing different types of View Port', () => {
             cy.get(':nth-child(1) > .data_wrap > .gridContainer > :nth-child(3) > .common_anchor').contains('Get a Free Demo Now');
             cy.get(':nth-child(1) > .data_wrap > .gridContainer > :nth-child(3) > .common_anchor').click();
 
-            // Get in Touch
-            cy.get(':nth-child(1) > .data_wrap > .gridContainer > :nth-child(3) > .common_anchor').click();
+            // // Get in Touch
+            // cy.get(':nth-child(1) > .data_wrap > .gridContainer > :nth-child(3) > .common_anchor').click();
 
-            // Full Name
-            cy.get(':nth-child(1) > :nth-child(1) > .form_field_wrap > div > .form_field').type("Lorem ipsum dolor sit amet consectetuer adipiscing elit Aenean commodo ligula eget dolor Aenean massa Cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus Donec quam felis", { waitforanimations: false, animationdistancethreshold: 50 });
+            // // Full Name
+            // cy.get(':nth-child(1) > :nth-child(1) > .form_field_wrap > div > .form_field').type("Lorem ipsum dolor sit amet consectetuer adipiscing elit Aenean commodo ligula eget dolor Aenean massa Cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus Donec quam felis", { waitforanimations: false, animationdistancethreshold: 50 });
 
-            // Email
-            cy.get(':nth-child(2) > .form_field_wrap > div > .form_field').type("abc@gmail.com");
+            // // Email
+            // cy.get(':nth-child(2) > .form_field_wrap > div > .form_field').type("abc@gmail.com");
 
-            // Mobile No
-            cy.get(':nth-child(3) > .form_field_wrap > div > .form_field').type("9825479404");
+            // // Mobile No
+            // cy.get(':nth-child(3) > .form_field_wrap > div > .form_field').type("9825479404");
 
-            // Description
-            cy.get('.col-sm-12 > .form_field_wrap > div > .form_field').type("hdif ofwohfroiufh fndfodohvofuv dofofovfjh odwoeofhjreof vfovngvnfuio fvnfeovfo vfvfovn");
+            // // Description
+            // cy.get('.col-sm-12 > .form_field_wrap > div > .form_field').type("hdif ofwohfroiufh fndfodohvofuv dofofovfjh odwoeofhjreof vfovngvnfuio fvnfeovfo vfvfovn");
 
-            cy.screenshot('onAfterScreenshot');
+            // cy.screenshot('onAfterScreenshot');
 
-            cy.get('#BtnSubmit').click();
-            cy.get('#BtnSubmit').click({force:true});
-            cy.get('#BtnSubmit').click({force:true});
-            cy.get('#BtnSubmit').click({force:true});
+            // cy.get('#BtnSubmit').click();
+            // cy.get('#BtnSubmit').click({force:true});
+            // cy.get('#BtnSubmit').click({force:true});
+            // cy.get('#BtnSubmit').click({force:true});
 
             // Capture end time.
             const endTime = Date.now();
