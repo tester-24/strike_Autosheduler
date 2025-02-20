@@ -6,7 +6,9 @@ it('Broker_Login', () => {
     cy.clearAllCookies();
     cy.visit('https://uatstrike.jainam.in/#/');
     cy.wait(3000);
-    cy.get('.nav-link').click()
+    cy.xpath("//button[@aria-label='Close']").click({force:true});
+    cy.wait(500)
+    cy.get('.nav-link').click({force:true})
 
     //Login Flow
     cy.wait(2000);
