@@ -17,6 +17,8 @@ describe('MarketOverview', () => {
       //   return false;
       // });
       cy.wait(5000)
+       cy.xpath("//button[@aria-label='Close']").click();
+            cy.wait(500)
       cy.get('#navBarWeb > :nth-child(2) > #Dashboard').should('be.visible')
       const startTime = Date.now();
       cy.get('#navBarWeb > :nth-child(2) > #Dashboard').click()
@@ -252,7 +254,8 @@ describe('MarketOverview', () => {
       if (loadTime > 2) { // Adjust threshold as needed (2 seconds in this example)
         console.warn(`Market  Page  load time exceeded threshold! (${loadTime}s)`);
       }
-
+     cy.xpath("//button[@aria-label='Close']").click();
+            cy.wait(500)
      // click on View all FII DII activity
       cy.wait(1000) 
       cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[1]/div/div/div[3]/div/div[2]/div/a').click({setTimeout:1000})
@@ -358,6 +361,8 @@ describe('MarketOverview', () => {
         return false;
       });
       cy.wait(2000)
+       cy.xpath("//button[@aria-label='Close']").click();
+            cy.wait(500)
       cy.get('#navBarWeb > :nth-child(2) > #Dashboard').should('be.visible')
       const startTime = Date.now();
       cy.get('#navBarWeb > :nth-child(2) > #Dashboard').click()
@@ -436,6 +441,8 @@ describe('MarketOverview', () => {
         return false;
       });
       cy.wait(5000)
+       cy.xpath("//button[@aria-label='Close']").click();
+            cy.wait(500)
       cy.get('#navBarWeb > :nth-child(2) > #Dashboard').should('be.visible')
       const startTime = Date.now();
       cy.get('#navBarWeb > :nth-child(2) > #Dashboard').click()
