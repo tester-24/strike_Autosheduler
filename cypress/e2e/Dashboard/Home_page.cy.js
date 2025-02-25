@@ -14,6 +14,8 @@ describe('Tetsing different types of View Port', () => {
 
             // Headers
             cy.wait(2000)
+             cy.xpath("//button[@aria-label='Close']").click();
+            cy.wait(500)
             cy.get('.icon_li > a > img').click();
 
             cy.get('li.active').should('be.visible');
@@ -109,6 +111,8 @@ describe('Tetsing different types of View Port', () => {
             console.log(`Start time: ${startTime} seconds`);
 
             cy.wait(5000)
+             cy.xpath("//button[@aria-label='Close']").click();
+            cy.wait(500)
            cy.get('#HomeWeb').should('be.visible');
            cy.get('#navBarWeb > :nth-child(2) > #Dashboard').should('be.visible');
            cy.get('#navBarWeb > :nth-child(3) > #Strategies').should('be.visible');
@@ -202,6 +206,8 @@ describe('Tetsing different types of View Port', () => {
 
             // Headers
             cy.wait(5000)
+             cy.xpath("//button[@aria-label='Close']").click();
+            cy.wait(500)
             cy.get('#HomeWeb').should('be.visible');
            cy.get('#navBarWeb > :nth-child(2) > #Dashboard').should('be.visible');
            cy.get('#navBarWeb > :nth-child(3) > #Strategies').should('be.visible');
