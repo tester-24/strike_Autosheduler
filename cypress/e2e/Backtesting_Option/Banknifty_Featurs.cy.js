@@ -7,6 +7,8 @@ it('Banknifty_Feature', () => {
     cy.visit('https://strike.jainam.in/#/');
     //cy.reload();
     cy.wait(5000);
+    cy.xpath("//button[@aria-label='Close']").click();
+    cy.wait(500)
     cy.get('.nav-link').click({force:true})
 
     //Login Flow
