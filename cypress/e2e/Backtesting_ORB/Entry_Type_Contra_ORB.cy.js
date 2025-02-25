@@ -12,6 +12,8 @@ it("Option Backtesting", () => {
 
      // cy.reload();
      cy.wait(5500);
+     cy.xpath("//button[@aria-label='Close']").click();
+     cy.wait(500)
      cy.get(".nav-link").click();
 
      //Login Flow
