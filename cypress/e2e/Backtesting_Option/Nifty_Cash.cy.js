@@ -6,8 +6,10 @@ it('Nift_Cash', () => {
     cy.clearAllCookies();
     cy.visit('https://strike.jainam.in/#/');
 
-    cy.wait(5000);
-    cy.get('.nav-link').click()
+     cy.wait(5000);
+     cy.xpath("//button[@aria-label='Close']").click();
+     cy.wait(500)
+     cy.get('.nav-link').click()
 
     //Login Flow
     cy.wait(2000);
