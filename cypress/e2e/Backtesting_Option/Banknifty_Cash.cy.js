@@ -14,7 +14,7 @@ it("Option Backtesting", () => {
 
   // cy.reload();
   cy.wait(5500);
-   cy.xpath("//button[@aria-label='Close']").click();
+  cy.xpath("//button[@aria-label='Close']").click();
   cy.wait(500)
   cy.get(".nav-link").click();
 
@@ -144,7 +144,8 @@ it("Option Backtesting", () => {
  // Log Builder
     //1) Total Lot
     //cy.get('.atrnumerictectbox').clear();
-    cy.get('.atrnumerictectbox').type('10');
+    //cy.get('.atrnumerictectbox').type('10');
+    cy.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/app-option-structure[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/kendo-numerictextbox[1]/input[1]").type(10)
     cy.scrollTo(20, 20);
 
   //2) Expiry
@@ -176,13 +177,13 @@ it("Option Backtesting", () => {
 
     cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('10');
     //cy.get('#LegTargetProfitError_0').should("be.visible");
-    cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+    //cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
 
-    cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('0');
-    cy.get('#LegTargetProfitError_0').should("be.visible");
+    //cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('0');
+   // cy.get('#LegTargetProfitError_0').should("be.visible");
 
-    cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
-    cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('6');
+   // cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+    //cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('6');
 
     // cy.get('#LegBuilder1 > .leg_inner_form_wrap > .is_new_leg > :nth-child(1) > .form_item_wrap > .text-gray-800 > .ml-2').click();
 
@@ -198,39 +199,44 @@ it("Option Backtesting", () => {
     cy.get('.is_new_leg > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('1');
    // cy.get('#LegStopLossError_0').should("be.visible");
 
-    cy.get('.is_new_leg > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
-    cy.get('.is_new_leg > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('5');
+    //cy.get('.is_new_leg > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+   // cy.get('.is_new_leg > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('5');
 
     /////// Trail SL
-    //cy.get('#LegBuilder1 > .leg_inner_form_wrap > .is_new_leg > :nth-child(3) > .form_item_wrap > .text-gray-800 > .ml-2').click();
-    cy.get('.padding_x20_y10 > .leg_inner_form_wrap > .is_new_leg > :nth-child(3) > .form_item_wrap > .text-gray-800 > .ml-2').click()
+   // cy.get('#LegBuilder1 > .leg_inner_form_wrap > .is_new_leg > :nth-child(3) > .form_item_wrap > .text-gray-800 > .ml-2').click();
+   cy.get('.padding_x20_y10 > .leg_inner_form_wrap > .is_new_leg > :nth-child(3) > .form_item_wrap > .text-gray-800 > .ml-2').click()
     /// X value
-    cy.get('.py-0 > .form-control').type('0');
-    cy.get('#LegInstrumentMovesValError_0 > .text-danger').should("be.visible");
+    cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-option-structure[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[2]/div[5]/div[1]/div[1]/div[2]/div[1]/div[4]/div[3]/div[1]/div[1]/div[1]/div[2]/kendo-numerictextbox[1]/input[1]').clear({force:true})
+    cy.wait(500)
+    cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-option-structure[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[2]/div[5]/div[1]/div[1]/div[2]/div[1]/div[4]/div[3]/div[1]/div[1]/div[1]/div[2]/kendo-numerictextbox[1]/input[1]').type('2')
+   // cy.get('.py-0 > .form-control').type('2');
+  //   cy.get('.py-0 > .text-danger').should("be.visible");
 
-    cy.get('.py-0 > .form-control').clear();
-    cy.get('.py-0 > .ng-star-inserted').should("be.visible");
+  //  cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-option-structure[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[2]/div[5]/div[1]/div[1]/div[2]/div[1]/div[4]/div[3]/div[1]/div[1]/div[1]/div[2]/kendo-numerictextbox[1]/input[1]').clear({force:true})
+  //   cy.get('.py-0 > .ng-star-inserted').should("be.visible");
 
-    cy.get('.py-0 > .form-control').type('10');
-  //  cy.get('#LegInstrumentMovesValError_0 > .text-danger').should("be.visible");
+  //   cy.get('.py-0 > .form-control').type('10');
+  // //  cy.get('#LegInstrumentMovesValError_0 > .text-danger').should("be.visible");
 
-    cy.get('.py-0 > .form-control').clear();
-    cy.get('.py-0 > .ng-star-inserted').should("be.visible");
+  // cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-option-structure[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[2]/div[5]/div[1]/div[1]/div[2]/div[1]/div[4]/div[3]/div[1]/div[1]/div[1]/div[2]/kendo-numerictextbox[1]/input[1]').clear({force:true})
+  //   cy.get('.py-0 > .ng-star-inserted').should("be.visible");
 
-    cy.get('.py-0 > .form-control').type('9');
+  //   cy.get('.py-0 > .form-control').type('9');
+
+
 
     /// Y value
     cy.get('.is_new_leg > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .p-0 > .form-control').type('5');
     //cy.get('#LegStopLossMovesValError_0 > .text-danger').should("be.visible");
 
-    cy.get('.is_new_leg > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .p-0 > .form-control').clear();
-    cy.get(':nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .p-0 > .ng-star-inserted').should("be.visible");
+    cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-option-structure[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[2]/div[5]/div[1]/div[1]/div[2]/div[1]/div[4]/div[3]/div[1]/div[1]/div[1]/div[3]/kendo-numerictextbox[1]/input[1]').clear()
+    cy.get('.p-0 > .text-danger').should("be.visible");
 
     cy.get('.is_new_leg > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .p-0 > .form-control').type('10');
    // cy.get('#LegStopLossMovesValError_0 > .text-danger').should("be.visible");
 
-    cy.get('.is_new_leg > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .p-0 > .form-control').clear();
-    cy.get(':nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .p-0 > .ng-star-inserted').should("be.visible");
+   cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-option-structure[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[2]/div[5]/div[1]/div[1]/div[2]/div[1]/div[4]/div[3]/div[1]/div[1]/div[1]/div[3]/kendo-numerictextbox[1]/input[1]').clear()
+   // cy.get(':nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .p-0 > .ng-star-inserted').should("be.visible");
 
     cy.get('.is_new_leg > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .p-0 > .form-control').type('7');
 
@@ -248,13 +254,13 @@ it("Option Backtesting", () => {
     cy.get(':nth-child(5) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('1');
     //cy.get('#LegReEntryTargetProfitError_0').should("be.visible");
 
-    cy.get(':nth-child(5) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+   cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-option-structure[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[2]/div[5]/div[1]/div[1]/div[2]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[2]/kendo-numerictextbox[1]/input[1]').clear({force:true});
     cy.get(':nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .ng-star-inserted').should("be.visible");
 
     cy.get(':nth-child(5) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('10');
    // cy.get('#LegReEntryTargetProfitError_0').should("be.visible");
 
-    cy.get(':nth-child(5) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+   cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-option-structure[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[2]/div[5]/div[1]/div[1]/div[2]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[2]/kendo-numerictextbox[1]/input[1]').clear({force:true});
     cy.get(':nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .ng-star-inserted').should("be.visible");
 
     cy.get(':nth-child(5) > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('7');
@@ -269,13 +275,13 @@ it("Option Backtesting", () => {
     cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('1');
   //  cy.get('#LegReEntryStopLossError_0').should("be.visible");
 
-    cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+    cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-option-structure[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[2]/div[5]/div[1]/div[1]/div[2]/div[1]/div[5]/div[2]/div[1]/div[1]/div[1]/div[2]/kendo-numerictextbox[1]/input[1]').clear({force:true});
     cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .ng-star-inserted').should("be.visible");
 
     cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('8');
    // cy.get('#LegReEntryStopLossError_0').should("be.visible");
 
-    cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+   cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-option-structure[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[2]/div[5]/div[1]/div[1]/div[2]/div[1]/div[5]/div[2]/div[1]/div[1]/div[1]/div[2]/kendo-numerictextbox[1]/input[1]').clear({force:true});
     cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .ng-star-inserted').should("be.visible");
 
     cy.get(':nth-child(5) > :nth-child(2) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('5');
@@ -288,12 +294,12 @@ it("Option Backtesting", () => {
 
     cy.get(':nth-child(5) > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('1');
 
-    cy.get(':nth-child(5) > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+   cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-option-structure[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[2]/div[5]/div[1]/div[1]/div[2]/div[1]/div[5]/div[3]/div[1]/div[1]/div[1]/div[2]/kendo-numerictextbox[1]/input[1]').clear({force:true});
     cy.get(':nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .text-danger').should("be.visible");
 
     cy.get(':nth-child(5) > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('4');
 
-    cy.get(':nth-child(5) > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
+    cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-option-structure[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[2]/div[5]/div[1]/div[1]/div[2]/div[1]/div[5]/div[3]/div[1]/div[1]/div[1]/div[2]/kendo-numerictextbox[1]/input[1]').clear({force:true});
     cy.get(':nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .text-danger').should("be.visible");
 
     cy.get(':nth-child(5) > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('5');
@@ -376,53 +382,53 @@ it("Option Backtesting", () => {
     cy.log("No data found");
   }
 
-//   ///// Click on Save Strategies
+  ///// Click on Save Strategies
  
-//   // Initial Setup
-//   cy.get(".sticky_btns_wrap > :nth-child(2) > div > .ng-star-inserted").click();
-//   cy.get(".k-window-titlebar").should("be.visible");
-//   //cy.get('[style="float: none;"] > .common_anchor').click();
-//   cy.get('.text-start > .full_wrap > .form-control').type('user258883')
-//   cy.get('[style="float: none;"] > .common_anchor').click()
+  // Initial Setup
+  cy.get(".sticky_btns_wrap > :nth-child(2) > div > .ng-star-inserted").click();
+  cy.get(".k-window-titlebar").should("be.visible");
+  //cy.get('[style="float: none;"] > .common_anchor').click();
+  cy.get('.text-start > .full_wrap > .form-control').type('user258883')
+  cy.get('[style="float: none;"] > .common_anchor').click()
 
-//  // Click on my Strategies
+ // Click on my Strategies
 
-//   cy.get('#navBarWeb > :nth-child(3) > #Strategies').click({force:true});
+  cy.get('#navBarWeb > :nth-child(3) > #Strategies').click({force:true});
 
-//   // Click on Activate
-//   cy.wait(2000);
-//   cy.xpath("(//button[@type='button'][normalize-space()='Activate'])[1]").click();
-//   // cy.get(':nth-child(1) > .inner_wrap > .sinner_wrap > .buttons_wrap > #strategy\.strategyId > .btn').click();
+  // Click on Activate
+  cy.wait(2000);
+  cy.xpath("(//button[@type='button'][normalize-space()='Activate'])[1]").click();
+  // cy.get(':nth-child(1) > .inner_wrap > .sinner_wrap > .buttons_wrap > #strategy\.strategyId > .btn').click();
 
-//   // Click on Live trade
+  // Click on Live trade
 
-//   // cy.xpath("//a[normalize-space()='Live Trade']").click();
+  // cy.xpath("//a[normalize-space()='Live Trade']").click();
 
-//   // cy.get('.ng-trigger').should("be.visible");
+  // cy.get('.ng-trigger').should("be.visible");
 
-//   // Click on Broker Login
-//   cy.get('.dash_left_wrap > :nth-child(2) > .common_anchor').click();
+  // Click on Broker Login
+  cy.get('.dash_left_wrap > .common_anchor').click();
 
-//   // 1) AliceBlue
-//   // cy.get(":nth-child(3) > .inner_wrap > .a > .common_anchor").click();
+  // 1) AliceBlue
+  // cy.get(":nth-child(3) > .inner_wrap > .a > .common_anchor").click();
 
-//   // // User id
-//   // cy.get(":nth-child(1) > .form_field_wrap > :nth-child(2) > .form_field").type(
-//   //   "1311739"
-//   // );
+  // // User id
+  // cy.get(":nth-child(1) > .form_field_wrap > :nth-child(2) > .form_field").type(
+  //   "1311739"
+  // );
 
-//   // // APi Key
-//   // cy.get(":nth-child(2) > .form_field_wrap > :nth-child(2) > .form_field").type(
-//   //   "fcIoF0TybGnWzqR4auLjf6o9AtPvrltCsGoWZRSeekH3ZQomBj3bhMhLECUf8SoXL6kq38sjBvScYJm29uEegQkX38FVqrD6lm7P2yGYn1SWMMfoFztVrCR5LIzq7iov"
-//   // );
+  // // APi Key
+  // cy.get(":nth-child(2) > .form_field_wrap > :nth-child(2) > .form_field").type(
+  //   "fcIoF0TybGnWzqR4auLjf6o9AtPvrltCsGoWZRSeekH3ZQomBj3bhMhLECUf8SoXL6kq38sjBvScYJm29uEegQkX38FVqrD6lm7P2yGYn1SWMMfoFztVrCR5LIzq7iov"
+  // );
 
-//   // cy.get("#BtnSubmit").click();
+  // cy.get("#BtnSubmit").click();
 
-// //  cy.get(".a > .greenbg").should("be.visible");
+//  cy.get(".a > .greenbg").should("be.visible");
 
-// //   cy.get(".a > .greenbg").click();
+//   cy.get(".a > .greenbg").click();
 
-// //  cy.wait(5000);
-// //  cy.get(".a > .greenbg").click();
+//  cy.wait(5000);
+//  cy.get(".a > .greenbg").click();
 
 });
