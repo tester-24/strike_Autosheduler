@@ -13,7 +13,7 @@ it("Option Backtesting", () => {
      // cy.reload();
      cy.wait(5500);
      cy.xpath("//button[@aria-label='Close']").click();
-     cy.wait(500)
+     cy.wait(200)
      cy.get(".nav-link").click();
 
      //Login Flow
@@ -34,7 +34,7 @@ it("Option Backtesting", () => {
       //click on dropdown
       cy.xpath('/html/body/app-root/app-layout/app-headerpanel/kendo-dialog/div[2]/div/div/div/div/div/div/kendo-dropdownlist').click()
  
-     // Click on Option dropdown
+     // Click on Orb option 
       cy.wait(1000)
       cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[1]').click({force:true})
     
@@ -141,7 +141,7 @@ it("Option Backtesting", () => {
         //click on runbacktest
         cy.get('.secondary').click()
         //validation for data 
-        cy.wait(60000)
+        cy.wait(10000)
         cy.get('#BackTestResultView > :nth-child(2)').should('be.visible')
  
    
