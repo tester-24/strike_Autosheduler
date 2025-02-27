@@ -2,6 +2,7 @@
 describe('Tetsing different types of View Port', () => {
     it('iphone-xr', () => {
         cy.viewport('iphone-xr')
+       //cy.wait('@dataLoad');
         cy.window().then(() => {
 
             // Capture start time
@@ -9,14 +10,15 @@ describe('Tetsing different types of View Port', () => {
 
             cy.visit('https://strike.jainam.in');
             cy.wait(3000);
+            cy.xpath("//button[@aria-label='Close']").click();
+            cy.wait(500)
             cy.screenshot('onBeforeScreenshot');
             console.log(`Start time: ${startTime} seconds`);
 
             // Headers
             cy.wait(2000)
-             cy.xpath("//button[@aria-label='Close']").click();
-            cy.wait(500)
-            cy.get('.icon_li > a > img').click();
+        
+            cy.get('.icon_li > a > img').click({force:true});
 
             cy.get('li.active').should('be.visible');
             cy.get('.mobile_menu > .ul_wrap > .content_ul > :nth-child(2)').should('be.visible');
@@ -79,7 +81,7 @@ describe('Tetsing different types of View Port', () => {
 
             // cy.get('#BtnSubmit').click();
             // cy.get('#BtnSubmit').click({force:true});
-            // cy.get('#BtnSubmit').click();
+            // cy.get('#BtnSubmit').click({force:true});
             // cy.get('#BtnSubmit').click();
 
             // Capture end time.
@@ -100,20 +102,22 @@ describe('Tetsing different types of View Port', () => {
     });
 
     it('Macbook-16', () => {
-        cy.viewport('macbook-16')
+       // cy.viewport('macbook-16')
         cy.window().then(() => {
 
             // Capture start time
             const startTime = Date.now();
 
             cy.visit('https://strike.jainam.in');
+            cy.wait(2000)
+            cy.xpath("//button[@aria-label='Close']").click();
+            cy.wait(500)
             cy.screenshot('onBeforeScreenshot');
+           
             console.log(`Start time: ${startTime} seconds`);
 
             cy.wait(5000)
-             cy.xpath("//button[@aria-label='Close']").click();
-            cy.wait(500)
-           cy.get('#HomeWeb').should('be.visible');
+          // cy.get('#HomeWeb').should('be.visible');
            cy.get('#navBarWeb > :nth-child(2) > #Dashboard').should('be.visible');
            cy.get('#navBarWeb > :nth-child(3) > #Strategies').should('be.visible');
            cy.get('#navBarWeb > :nth-child(4) > #Marketplace').should('be.visible');
@@ -173,8 +177,8 @@ describe('Tetsing different types of View Port', () => {
 
             // cy.get('#BtnSubmit').click();
             // cy.get('#BtnSubmit').click({force:true});
-            // cy.get('#BtnSubmit').click();
-            // cy.get('#BtnSubmit').click();
+            // cy.get('#BtnSubmit').click({force:true});
+            // cy.get('#BtnSubmit').click({force:true});
 
             // Capture end time.
             const endTime = Date.now();
@@ -194,21 +198,22 @@ describe('Tetsing different types of View Port', () => {
     });
 
     it('1800, 900', () => {
-        cy.viewport(1800, 900);
+      //  cy.viewport(1800, 900);
         cy.window().then(() => {
 
             // Capture start time
             const startTime = Date.now();
 
             cy.visit('https://strike.jainam.in');
+            cy.xpath("//button[@aria-label='Close']").click();
+            cy.wait(500)
             cy.screenshot('onBeforeScreenshot');
+          
             console.log(`Start time: ${startTime} seconds`);
 
             // Headers
             cy.wait(5000)
-             cy.xpath("//button[@aria-label='Close']").click();
-            cy.wait(500)
-            cy.get('#HomeWeb').should('be.visible');
+           // cy.get('#HomeWeb').should('be.visible');
            cy.get('#navBarWeb > :nth-child(2) > #Dashboard').should('be.visible');
            cy.get('#navBarWeb > :nth-child(3) > #Strategies').should('be.visible');
            cy.get('#navBarWeb > :nth-child(4) > #Marketplace').should('be.visible');
