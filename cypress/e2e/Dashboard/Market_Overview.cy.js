@@ -9,7 +9,7 @@ describe('MarketOverview', () => {
 
       // Capture start time
       cy.visit('https://strike.jainam.in');
-      cy.wait(3000);
+     // cy.wait(3000);
       // Cypress.on('uncaught:exception', (err) => {
       //   // returning false here prevents Cypress from
       //   // failing the test
@@ -17,8 +17,8 @@ describe('MarketOverview', () => {
       //   return false;
       // });
       cy.wait(5000)
-       cy.xpath("//button[@aria-label='Close']").click();
-            cy.wait(500)
+      cy.xpath("//button[@aria-label='Close']").click();
+      cy.wait(500)
       cy.get('#navBarWeb > :nth-child(2) > #Dashboard').should('be.visible')
       const startTime = Date.now();
       cy.get('#navBarWeb > :nth-child(2) > #Dashboard').click()
@@ -218,6 +218,7 @@ describe('MarketOverview', () => {
       cy.wait(500)
       cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[5]/div/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist').click({force:true})
       cy.wait(500)
+ 
       cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[10]/span[1]').click({ force: true })
     });
   });
@@ -228,22 +229,24 @@ describe('MarketOverview', () => {
     cy.window().then(() => {
 
       // Capture start time
-      cy.visit('https://strike.jainam.in/Market-Overview');
-      cy.wait(3000);
+      cy.visit('https://strike.jainam.in');
+     // cy.wait(3000);
       // Cypress.on('uncaught:exception', (err) => {
       //   // returning false here prevents Cypress from
       //   // failing the test
       //   console.log('Cypress detected uncaught exception: ', err);
       //   return false;
       // });
-      cy.wait(3000)
-     // cy.get('#navBar > :nth-child(2) > #Dashboard').should('be.visible')
+      cy.wait(5000)
+      cy.xpath("//button[@aria-label='Close']").click();
+      cy.wait(500)
+      cy.get('#navBarWeb > :nth-child(2) > #Dashboard').should('be.visible')
       const startTime = Date.now();
-     // cy.get('#navBar > :nth-child(2) > #Dashboard').click()
+      cy.get('#navBarWeb > :nth-child(2) > #Dashboard').click()
 
       //Dropdown should be visible
       cy.wait(2000)
-     // cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-dashboard[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h3[1]/kendo-dropdownlist[1]/button[1]').should('be.visible')
+    // cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-dashboard[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h3[1]/kendo-dropdownlist[1]/button[1]').should('be.visible')
       const endTime = Date.now();
       console.log(`End time: ${endTime} seconds`);
       const loadTime = (endTime - startTime); // Calculate load time
@@ -254,8 +257,9 @@ describe('MarketOverview', () => {
       if (loadTime > 2) { // Adjust threshold as needed (2 seconds in this example)
         console.warn(`Market  Page  load time exceeded threshold! (${loadTime}s)`);
       }
-     cy.xpath("//button[@aria-label='Close']").click();
-            cy.wait(500)
+      // cy.xpath("//button[@aria-label='Close']").click({force:true});
+      // cy.wait(500)
+
      // click on View all FII DII activity
       cy.wait(1000) 
       cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[1]/div/div/div[3]/div/div[2]/div/a').click({setTimeout:1000})
@@ -345,31 +349,30 @@ describe('MarketOverview', () => {
   });
 
 
-
   it('Click on Calender', () => {
     cy.viewport(1800, 1000)
     //Calculate the Time   
     cy.window().then(() => {
 
       // Capture start time
-      cy.visit('https://strike.jainam.in/Market-Overview');
-      cy.wait(3000);
-      Cypress.on('uncaught:exception', (err) => {
-        // returning false here prevents Cypress from
-        // failing the test
-        console.log('Cypress detected uncaught exception: ', err);
-        return false;
-      });
-      cy.wait(2000)
-       cy.xpath("//button[@aria-label='Close']").click();
-            cy.wait(500)
+      cy.visit('https://strike.jainam.in');
+     // cy.wait(3000);
+      // Cypress.on('uncaught:exception', (err) => {
+      //   // returning false here prevents Cypress from
+      //   // failing the test
+      //   console.log('Cypress detected uncaught exception: ', err);
+      //   return false;
+      // });
+      cy.wait(5000)
+      cy.xpath("//button[@aria-label='Close']").click();
+      cy.wait(500)
       cy.get('#navBarWeb > :nth-child(2) > #Dashboard').should('be.visible')
       const startTime = Date.now();
       cy.get('#navBarWeb > :nth-child(2) > #Dashboard').click()
 
       //Dropdown should be visible
       cy.wait(2000)
-      // cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-dashboard[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h3[1]/kendo-dropdownlist[1]/button[1]').should('be.visible')
+    // cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-dashboard[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h3[1]/kendo-dropdownlist[1]/button[1]').should('be.visible')
       const endTime = Date.now();
       console.log(`End time: ${endTime} seconds`);
       const loadTime = (endTime - startTime); // Calculate load time
@@ -380,7 +383,6 @@ describe('MarketOverview', () => {
       if (loadTime > 2) { // Adjust threshold as needed (2 seconds in this example)
         console.warn(`Market  Page  load time exceeded threshold! (${loadTime}s)`);
       }
-
       // Scroll to up
       cy.scrollTo('top')
 
@@ -432,24 +434,24 @@ describe('MarketOverview', () => {
     cy.window().then(() => {
 
       // Capture start time
-      cy.visit('https://strike.jainam.in/Market-Overview');
-      cy.wait(3000);
-      Cypress.on('uncaught:exception', (err) => {
-        // returning false here prevents Cypress from
-        // failing the test
-        console.log('Cypress detected uncaught exception: ', err);
-        return false;
-      });
+      cy.visit('https://strike.jainam.in');
+     // cy.wait(3000);
+      // Cypress.on('uncaught:exception', (err) => {
+      //   // returning false here prevents Cypress from
+      //   // failing the test
+      //   console.log('Cypress detected uncaught exception: ', err);
+      //   return false;
+      // });
       cy.wait(5000)
-       cy.xpath("//button[@aria-label='Close']").click();
-            cy.wait(500)
+      cy.xpath("//button[@aria-label='Close']").click();
+      cy.wait(500)
       cy.get('#navBarWeb > :nth-child(2) > #Dashboard').should('be.visible')
       const startTime = Date.now();
       cy.get('#navBarWeb > :nth-child(2) > #Dashboard').click()
 
       //Dropdown should be visible
       cy.wait(2000)
-      // cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-dashboard[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h3[1]/kendo-dropdownlist[1]/button[1]').should('be.visible')
+    // cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-dashboard[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h3[1]/kendo-dropdownlist[1]/button[1]').should('be.visible')
       const endTime = Date.now();
       console.log(`End time: ${endTime} seconds`);
       const loadTime = (endTime - startTime); // Calculate load time
@@ -460,7 +462,7 @@ describe('MarketOverview', () => {
       if (loadTime > 2) { // Adjust threshold as needed (2 seconds in this example)
         console.warn(`Market  Page  load time exceeded threshold! (${loadTime}s)`);
       }
-
+      
       // Scroll to up
       // click on Recent News
       cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[7]/div/div/div[2]/a').click()
