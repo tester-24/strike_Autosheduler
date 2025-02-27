@@ -12,8 +12,8 @@ it("Option Backtesting", () => {
   
         // cy.reload();
         cy.wait(2000);
-   cy.xpath("//button[@aria-label='Close']").click();
-  cy.wait(500)
+        cy.xpath("//button[@aria-label='Close']").click();
+        cy.wait(200)
         cy.get(".nav-link").click({force:true});
   
         //Login Flow
@@ -34,7 +34,7 @@ it("Option Backtesting", () => {
          //click on dropdown
          cy.xpath('/html/body/app-root/app-layout/app-headerpanel/kendo-dialog/div[2]/div/div/div/div/div/div/kendo-dropdownlist').click()
     
-        // Click on ORB Option from dropdown
+        // Click on orb option
          cy.wait(500)
          cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[1]').click({force:true})
    
@@ -48,7 +48,7 @@ it("Option Backtesting", () => {
        cy.get(':nth-child(1) > :nth-child(1) > .form_item_wrap > .full_wrap > .form-control').click({force:true})
        //cy.xpath('/html/body/app-root/app-layout/app-orb-structure/div/div/div/div/div/div/div[2]/div/div/form[2]/div[1]/div/div[1]/div[1]/div/div/kendo-multiselect/kendo-taglist/kendo-searchbar/input').click()
         //select symbol 3MINDIA
-        cy.wait(500)
+        cy.wait(1000)
         cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[13]/span[1]').click()
         
         //delete selected symbol just for checking validation
@@ -83,7 +83,7 @@ it("Option Backtesting", () => {
          cy.get('#timepicker-3').clear()
          //Validation message 
          cy.get('.full_wrap > .text-danger').should('be.visible')
-         cy.get('#timepicker-3').type('15:15')
+         cy.get('#timepicker-3').type('09:57')
 
          //Validation for qunatity
          cy.get(':nth-child(3) > :nth-child(1) > .form_item_wrap > .full_wrap > .form-control').clear()
@@ -152,7 +152,7 @@ it("Option Backtesting", () => {
        //click on runbacktest
        cy.get('.secondary').click()
        //validation for data 
-       cy.wait(60000)
+       cy.wait(7000)
        cy.get('#BackTestResultView > :nth-child(2)').should('be.visible')
 
 })  
