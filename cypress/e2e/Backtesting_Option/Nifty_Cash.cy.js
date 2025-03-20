@@ -33,7 +33,7 @@ it('Nift_Cash', () => {
 
     //ADD OPTION DETAILS
     // 1) Symbol
-    cy.xpath("//span[contains(text(),'BANKNIFTY')]").type("{downArrow}{Enter}")
+    cy.xpath("//span[contains(text(),'NIFTY')]").type("{downArrow}{Enter}")
 
     // 2) Underlying
     // cy.xpath("//input[@id='UnderlyingTypevalue']").click();
