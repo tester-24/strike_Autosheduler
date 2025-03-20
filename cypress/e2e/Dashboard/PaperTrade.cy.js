@@ -22,7 +22,7 @@ it('PaperTrade', () => {
   cy.log('Login successful');
 
   // Click on Backtesting
-  cy.wait(4000);
+  cy.wait(4000)
   cy.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/app-headerpanel[1]/div[2]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[5]/a[1]").click();
 
   // Click on Option dropdown
