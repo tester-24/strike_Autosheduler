@@ -10,7 +10,7 @@ describe('Tetsing different types of View Port', () => {
 
             cy.visit('https://strike.jainam.in');
             cy.wait(3000);
-            cy.xpath("//button[@aria-label='Close']").click();
+       //     cy.xpath("//button[@aria-label='Close']").click();
             cy.wait(500)
             cy.screenshot('onBeforeScreenshot');
             console.log(`Start time: ${startTime} seconds`);
@@ -110,7 +110,7 @@ describe('Tetsing different types of View Port', () => {
 
             cy.visit('https://strike.jainam.in');
             cy.wait(2000)
-            cy.xpath("//button[@aria-label='Close']").click();
+         //   cy.xpath("//button[@aria-label='Close']").click();
             cy.wait(500)
             cy.screenshot('onBeforeScreenshot');
            
@@ -205,7 +205,7 @@ describe('Tetsing different types of View Port', () => {
             const startTime = Date.now();
 
             cy.visit('https://strike.jainam.in');
-            cy.xpath("//button[@aria-label='Close']").click();
+     //       cy.xpath("//button[@aria-label='Close']").click();
             cy.wait(500)
             cy.screenshot('onBeforeScreenshot');
           
