@@ -8,7 +8,7 @@ it('Nifty Feature', () => {
     cy.visit('https://strike.jainam.in/#/');
     //cy.reload();
     cy.wait(4000);
-    cy.xpath("//button[@aria-label='Close']").click();
+ //   cy.xpath("//button[@aria-label='Close']").click();
     cy.wait(200)
     cy.get('.nav-link').click()
 
