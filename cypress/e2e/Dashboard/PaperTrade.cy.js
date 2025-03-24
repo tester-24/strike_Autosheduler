@@ -8,7 +8,7 @@ it('PaperTrade', () => {
   cy.visit('https://strike.jainam.in/#/');
 
   cy.wait(5000);
-  cy.xpath("//button[@aria-label='Close']").click({force:true});
+//  cy.xpath("//button[@aria-label='Close']").click({force:true});
   cy.wait(1000)
   cy.get('.nav-link').click({force:true})
 
