@@ -8,7 +8,7 @@ it('Banknifty_Feature', () => {
     //cy.reload();
     cy.wait(5000);
 
-    cy.xpath("//button[@aria-label='Close']").click();
+  //  cy.xpath("//button[@aria-label='Close']").click();
 
     cy.get('.nav-link').click({force:true})
 
