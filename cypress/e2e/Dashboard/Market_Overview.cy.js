@@ -238,7 +238,7 @@ describe('MarketOverview', () => {
       //   return false;
       // });
       cy.wait(5000)
-      cy.xpath("//button[@aria-label='Close']").click();
+     // cy.xpath("//button[@aria-label='Close']").click();
       cy.wait(500)
       cy.get('#navBarWeb > :nth-child(2) > #Dashboard').should('be.visible')
       const startTime = Date.now();
