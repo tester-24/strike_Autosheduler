@@ -6,7 +6,7 @@ it('Broker_Login', () => {
     cy.clearAllCookies();
     cy.visit('https://uatstrike.jainam.in/#/');
     cy.wait(3000);
- //   cy.xpath("//button[@aria-label='Close']").click();
+   // cy.xpath("//button[@aria-label='Close']").click();
     cy.wait(200)
     cy.get('.nav-link').click()
 
@@ -45,11 +45,11 @@ it('Broker_Login', () => {
      cy.xpath('/html/body/app-root/app-layout/app-broker-dynamic/ngx-dynamic-hooks/app-odin/div/div/div/div/div/div/div[2]/div/div/div/div/form/fieldset/div/div[3]/kendo-formfield/div/kendo-textbox/input').type('AOZPK2130G')
      //Click on Submit Button
      cy.get('#BtnSubmit').click({timeout:1500})
-     cy.wait(20000)
+     cy.wait(15000)
      //verify success message for login
      //cy.wait(2000)
      //cy.get('.ng-trigger').should('be.visible')
-     cy.log('Setup Successful')
+    // cy.log('Setup Successful')
       // click on Logged In tab   
      cy.get(':nth-child(2) > .nav-link').click()
        //Login button is visible
@@ -57,22 +57,25 @@ it('Broker_Login', () => {
     //remove button is visible
      cy.get('.pinkbg').should('be.visible')
      //click on lOgin button
-     cy.get('.a > .greenbg').click()
+     cy.xpath("//button[normalize-space()='Log in']").click()
+ 
     // verify user m3903 log in successfully
-   // cy.xpath('/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]').should('be.visible')
+    cy.wait(7000)
+   cy.xpath('/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]').should('be.visible')
     cy.log('Broker logged in acoount successful')
     //verify Re-login button is visible
-    cy.get('.a > .greenbg').should('be.visible')
-    // verify Disconnect button is visible
+     cy.get('.a > .greenbg').should('be.visible')
+  //   // verify Disconnect button is visible
     cy.get('.pinkbg').should('be.visible')
-   // click on disconnect button
-   cy.get('.pinkbg').click({force:true})
+  //  // click on disconnect button
+  cy.wait(7000)
+  cy.xpath("//button[normalize-space()='Disconnect']").click({force:true})
   
-   //click on yes option 
-    cy.get('.grey').click({force:true})  
-    // verify message broker disconnect successfully
-    cy.wait(1000)
-    cy.get('.ng-trigger').should('be.visible') 
+ //click on yes option 
+      cy.get('.grey').click({force:true})  
+//   //   // verify message broker disconnect successfully
+//   //   cy.wait(1000)
+   cy.get('.ng-trigger').should('be.visible') 
     cy.log('Broker disconnected sucessfully')
 
 
