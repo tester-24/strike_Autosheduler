@@ -389,7 +389,7 @@ it('PaperTrade', () => {
   //click on activate button 
   cy.xpath('/html/body/app-root/app-layout/app-strategies/div[2]/div/div/div/div/div[2]/div/div/div[2]/app-my-strategies/div/div[2]/div/app-my-strategies-strategies/kendo-dialog/div[2]/div/div/form/div[2]/button').click()
  // click on yes Option for pop up  
- // cy.get('.k-actions > .grey').click()
+  cy.get('.k-actions > .grey').click({force:true})
  //Visible succesful message for activatuion 
   cy.wait(2000)
 // cy.get('.ng-trigger').should('be.visible')
