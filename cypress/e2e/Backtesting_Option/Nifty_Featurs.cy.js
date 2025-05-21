@@ -8,7 +8,7 @@ it('Nifty Feature', () => {
     cy.visit('https://strike.jainam.in/#/');
     //cy.reload();
     cy.wait(4000);
- //   cy.xpath("//button[@aria-label='Close']").click();
+   // cy.xpath("//button[@aria-label='Close']").click();
     cy.wait(200)
     cy.get('.nav-link').click()
 
@@ -28,6 +28,14 @@ it('Nifty Feature', () => {
     // Click on Option dropdown
     // cy.xpath("//span[contains(text(),'Option')]").click();
 
+
+     //click on dropdown
+      cy.xpath('/html/body/app-root/app-layout/app-headerpanel/kendo-dialog/div[2]/div/div/div/div/div/div/kendo-dropdownlist').click()
+ 
+     // Click on option 
+      cy.wait(1000)
+      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[3]').click({force:true})
+    
     // Click on Proceed
     cy.wait(1500);
     cy.xpath("//a[normalize-space()='Proceed']").click();
