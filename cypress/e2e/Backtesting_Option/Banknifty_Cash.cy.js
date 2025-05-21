@@ -1,154 +1,133 @@
 /// <reference types="cypress"/>
 
-it("Option Backtesting", () => {
-  cy.viewport(1750, 800);
-  cy.clearAllCookies();
-  cy.visit("https://strike.jainam.in");
+it('BankNift_Cash', () => {
 
-  Cypress.on("uncaught:exception", (err) => {
-    // returning false here prevents Cypress from
-    // failing the test
-    console.log("Cypress detected uncaught exception: ", err);
-    return false;
-  });
+    cy.viewport(1750, 800);
+    cy.clearAllCookies();
+    cy.visit('https://strike.jainam.in/#/');
 
-  // cy.reload();
-  cy.wait(5500);
- // cy.xpath("//button[@aria-label='Close']").click();
-  cy.wait(500)
-  cy.get(".nav-link").click();
+    cy.wait(5000);
+   // cy.xpath("//button[@aria-label='Close']").click();
+    //cy.wait(300)
+    cy.get('.nav-link').click()
 
-  //Login Flow
-  cy.wait(1000);
-  cy.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/app-headerpanel[1]/app-login[1]/div[1]/kendo-dialog[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/kendo-textbox[1]/input[1]").type('9825479404')
-   cy.get(".btn_bg_bw").click();
-  cy.wait(1000);
-  cy.xpath("//kendo-textbox[@placeholder='Enter Password']")
-    .should("be.visible")
-    .type("Loop@345");
-  cy.get(".btn_bg_bw").click();
-  cy.log("Login successful");
+    //Login Flow
+    cy.wait(2000);
+    cy.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/app-headerpanel[1]/app-login[1]/div[1]/kendo-dialog[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/kendo-textbox[1]/input[1]").type('9825479404')
+    cy.get('.btn_bg_bw').click();
+    cy.wait(2000);
+    cy.xpath("//kendo-textbox[@placeholder='Enter Password']").type('Loop@345');
+    cy.get('.btn_bg_bw').click();
+    cy.log('Login successful');
 
-  // Click on Backtesting
-  cy.wait(5000);
-  cy.get('#navBarWeb > :nth-child(5) > #Backtesting').click();
+    // Click on Backtesting
+    cy.wait(4000);
+    cy.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/app-headerpanel[1]/div[2]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[5]/a[1]").click();
+ 
+     //click on dropdown
+      cy.xpath('/html/body/app-root/app-layout/app-headerpanel/kendo-dialog/div[2]/div/div/div/div/div/div/kendo-dropdownlist').click()
+ 
+     // Click on  option 
+      cy.wait(1000)
+      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[3]').click({force:true})
+    
+    // Click on Option dropdown
+    // cy.xpath("//span[contains(text(),'Option')]").click();
 
-  // Click on Option dropdown
-  // cy.xpath("//span[contains(text(),'Option')]").click();
+    // Click on Proceed
+    cy.wait(1500);
+    cy.xpath("//a[normalize-space()='Proceed']").click();
 
-  // Click on Proceed
-  cy.wait(1500);
-  cy.xpath("//a[normalize-space()='Proceed']").click();
+    //ADD OPTION DETAILS
+    // 1) Symbol
+    cy.xpath("//span[contains(text(),'NIFTY')]").type("{downArrow}{Enter}")
 
-  //ADD OPTION DETAILS
-  // 1) Symbol
-  // cy.xpath("//span[contains(text(),'BANKNIFTY')]").click();
+    // 2) Underlying
+    // cy.xpath("//input[@id='UnderlyingTypevalue']").click();
 
-  // 2) Underlying
-  // cy.xpath("//input[@id='UnderlyingTypevalue']").click();
+    // 3) Type
 
-  // 3) Type
+    // 4) Entry Time
+    cy.wait(1500);
+    cy.xpath( '/html/body/app-root/app-layout/app-option-structure/div[2]/div/div/div/div/div[2]/div/div/div/form[2]/div[1]/div/div/div[2]/div[2]/div/div/div/kendo-timepicker/button/kendo-icon-wrapper').click({force:true});
 
-  // 4) Entry Time
-  cy.wait(3000);
-  cy.xpath( '/html/body/app-root/app-layout/app-option-structure/div[2]/div/div/div/div/div[2]/div/div/div/form[2]/div[1]/div/div/div[2]/div[2]/div/div/div/kendo-timepicker/button/kendo-icon-wrapper').click({force:true});
 
-  cy.xpath("(//input[@id='timepicker-1'])[1]").click({force:true});
-  cy.xpath("(//input[@id='timepicker-1'])[1]")
-    .should("be.visible")
-    .type("09.10");
-  cy.scrollTo(1000, 0);
-  cy.get("div.ng-star-inserted > .text-danger").should("be.visible");
-  cy.xpath("//a[normalize-space()='Save']").click({ force: true });
-  cy.scrollTo(1000, 0);
+    cy.xpath("(//input[@id='timepicker-1'])[1]").click();
+    cy.xpath("(//input[@id='timepicker-1'])[1]").should('be.visible').type("09.10");
+    cy.scrollTo(1000, 0);
+    cy.get('div.ng-star-inserted > .text-danger').should('be.visible')
+    cy.xpath("//a[normalize-space()='Save']").click({ force: true });
+    cy.scrollTo(1000, 0);
 
-  cy.xpath("(//input[@id='timepicker-1'])[1]").click({force:true});
-  cy.xpath("(//input[@id='timepicker-1'])[1]")
-    .should("be.visible")
-    .type("09.05");
-  cy.get("div.ng-star-inserted > .text-danger").should("be.visible");
-  cy.scrollTo(1000, 0);
-  cy.xpath("//a[normalize-space()='Save']").click({ force: true });
-  cy.scrollTo(1000, 0);
+    cy.xpath("(//input[@id='timepicker-1'])[1]").click();
+    cy.xpath("(//input[@id='timepicker-1'])[1]").should('be.visible').type("09.05");
+    cy.get('div.ng-star-inserted > .text-danger').should('be.visible')
+    cy.scrollTo(1000, 0);
+    cy.xpath("//a[normalize-space()='Save']").click({ force: true });
+    cy.scrollTo(1000, 0);
 
-  cy.wait(500);
-  cy.xpath("(//input[@id='timepicker-1'])[1]").click();
-  cy.xpath("(//input[@id='timepicker-1'])[1]")
-    .should("be.visible")
-    .type("09:20");
-  cy.scrollTo(1000, 0);
-  cy.xpath("//a[normalize-space()='Save']").click({ force: true });
-  cy.scrollTo(1000, 0);
+    cy.wait(500);
+    cy.xpath("(//input[@id='timepicker-1'])[1]").click();
+    cy.xpath("(//input[@id='timepicker-1'])[1]").should('be.visible').type("09:20");
+    cy.scrollTo(1000, 0);
+    cy.xpath("//a[normalize-space()='Save']").click({ force: true });
+    cy.scrollTo(1000, 0);
 
-  cy.wait(500);
-  cy.xpath("(//input[@id='timepicker-1'])[1]").click();
-  cy.xpath("(//input[@id='timepicker-1'])[1]")
-    .should("be.visible")
-    .type("08:06");
-  cy.scrollTo(1000, 0);
-  cy.xpath("//a[normalize-space()='Save']").click({ force: true });
-  cy.scrollTo(1000, 0);
+    cy.wait(500);
+    cy.xpath("(//input[@id='timepicker-1'])[1]").click();
+    cy.xpath("(//input[@id='timepicker-1'])[1]").should('be.visible').type("08:06");
+    cy.scrollTo(1000, 0);
+    cy.xpath("//a[normalize-space()='Save']").click({ force: true });
+    cy.scrollTo(1000, 0);
 
-  cy.wait(500);
-  cy.xpath("(//input[@id='timepicker-1'])[1]").click();
-  cy.xpath("(//input[@id='timepicker-1'])[1]")
-    .should("be.visible")
-    .type("09:20");
-  cy.scrollTo(1000, 0);
-  cy.xpath("//a[normalize-space()='Save']").click({ force: true });
-  cy.scrollTo(1000, 0);
+    cy.wait(500);
+    cy.xpath("(//input[@id='timepicker-1'])[1]").click();
+    cy.xpath("(//input[@id='timepicker-1'])[1]").should('be.visible').type("09:20");
+    cy.scrollTo(1000, 0);
+    cy.xpath("//a[normalize-space()='Save']").click({ force: true });
+    cy.scrollTo(1000, 0);
 
-  // 5) Exit Time
+    // 5) Exit Time
 
-  cy.xpath("(//input[@id='timepicker-2'])[1]").click();
-  cy.xpath("(//input[@id='timepicker-2'])[1]")
-    .should("be.visible")
-    .type("15:50");
-  cy.scrollTo(1000, 0);
-  cy.get(".time_icon_wrap > .text-danger").should("be.visible");
-  cy.xpath("//a[normalize-space()='Save']").click({ force: true });
-  cy.get(".text-danger").should("be.visible");
-  cy.scrollTo(1000, 0);
+    cy.xpath("(//input[@id='timepicker-2'])[1]").click();
+    cy.xpath("(//input[@id='timepicker-2'])[1]").should('be.visible').type("15:50");
+    cy.scrollTo(1000, 0);
+    cy.get('.time_icon_wrap > .text-danger').should('be.visible')
+    cy.xpath("//a[normalize-space()='Save']").click({ force: true });
+    cy.get('.text-danger').should('be.visible')
+    cy.scrollTo(1000, 0);
 
-  cy.wait(500);
-  cy.xpath("(//input[@id='timepicker-2'])[1]").click();
-  cy.xpath("(//input[@id='timepicker-2'])[1]")
-    .should("be.visible")
-    .type("15:31");
-  cy.scrollTo(1000, 0);
-  cy.get(".time_icon_wrap > .text-danger").should("be.visible");
-  cy.xpath("//a[normalize-space()='Save']").click({ force: true });
-  cy.get(".text-danger").should("be.visible");
-  cy.scrollTo(1000, 0);
+    cy.wait(500);
+    cy.xpath("(//input[@id='timepicker-2'])[1]").click();
+    cy.xpath("(//input[@id='timepicker-2'])[1]").should('be.visible').type("15:31");
+    cy.scrollTo(1000, 0);
+    cy.get('.time_icon_wrap > .text-danger').should('be.visible')
+    cy.xpath("//a[normalize-space()='Save']").click({ force: true });
+    cy.get('.text-danger').should('be.visible')
+    cy.scrollTo(1000, 0);
 
-  cy.wait(500);
-  cy.xpath("(//input[@id='timepicker-2'])[1]").click();
-  cy.xpath("(//input[@id='timepicker-2'])[1]")
-    .should("be.visible")
-    .type("15:45");
-  cy.scrollTo(1000, 0);
-  cy.get(".time_icon_wrap > .text-danger").should("be.visible");
-  cy.xpath("//a[normalize-space()='Save']").click({ force: true });
-  cy.get(".text-danger").should("be.visible");
-  cy.scrollTo(1000, 0);
+    cy.wait(500);
+    cy.xpath("(//input[@id='timepicker-2'])[1]").click();
+    cy.xpath("(//input[@id='timepicker-2'])[1]").should('be.visible').type("15:45");
+    cy.scrollTo(1000, 0);
+    cy.get('.time_icon_wrap > .text-danger').should('be.visible')
+    cy.xpath("//a[normalize-space()='Save']").click({ force: true });
+    cy.get('.text-danger').should('be.visible')
+    cy.scrollTo(1000, 0);
 
-  cy.wait(500);
-  cy.xpath("(//input[@id='timepicker-2'])[1]").click();
-  cy.xpath("(//input[@id='timepicker-2'])[1]")
-    .should("be.visible")
-    .type("15:15");
-  cy.scrollTo(1000, 0);
-  cy.xpath("//a[normalize-space()='Save']").click({ force: true });
-  cy.scrollTo(0, 500);
+    cy.wait(500);
+    cy.xpath("(//input[@id='timepicker-2'])[1]").click();
+    cy.xpath("(//input[@id='timepicker-2'])[1]").should('be.visible').type("15:15");
+    cy.scrollTo(1000, 0);
+    cy.xpath("//a[normalize-space()='Save']").click({ force: true });
+    cy.scrollTo(0, 500);
 
  // Log Builder
     //1) Total Lot
-    //cy.get('.atrnumerictectbox').clear();
-    //cy.get('.atrnumerictectbox').type('10');
-    cy.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/app-option-structure[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/kendo-numerictextbox[1]/input[1]").type(10)
-    cy.scrollTo(20, 20);
-
-  //2) Expiry
+   
+    cy.xpath('/html/body/app-root/app-layout/app-option-structure/div[2]/div/div/div/div/div[2]/div/div/div/form[2]/div[3]/div/div[2]/div[1]/div/div/div/kendo-numerictextbox/input').clear()
+     cy.xpath('/html/body/app-root/app-layout/app-option-structure/div[2]/div/div/div/div/div[2]/div/div/div/form[2]/div[3]/div/div[2]/div[1]/div/div/div/kendo-numerictextbox/input').type(5)
+    //2) Expiry
     cy.wait(3000)
    // cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[2]').click()
 
@@ -164,7 +143,7 @@ it("Option Backtesting", () => {
     // verify leg 1 is created or not
     cy.get('.font_med > .col-12 > .blue_ucase > :nth-child(1)').should("be.visible");
 
-    ////// Target profit
+      ////// Target profit
     //cy.get('#LegBuilder1 > .leg_inner_form_wrap > .is_new_leg > :nth-child(1) > .form_item_wrap > .text-gray-800 > .ml-2').click();
     cy.get('.padding_x20_y10 > .leg_inner_form_wrap > .is_new_leg > :nth-child(1) > .form_item_wrap > .text-gray-800 > .ml-2').click();
     // select dropdown
@@ -365,70 +344,12 @@ it("Option Backtesting", () => {
   cy.get("div.ng-star-inserted > .text-danger").should("be.visible");
 
   cy.get("#datepicker-4").type("2024-2024");
+    //// Click on Run Backtesting
+    cy.get('.secondary').click();
 
-  //// Click on Run Backtesting
-  cy.get(".secondary").click();
+    cy.get('.loader_numb').should("be.visible");
 
-  cy.get(".loader_numb").should("be.visible");
-  cy.wait(85000);
 
-  if (
-    cy.xpath("/html/body/app-root/app-layout/app-option-structure/div[2]/div/div/div/div/div[2]/div/div/div/div/app-back-test-result/div[1]/div[2]/div/div[2]/div/kendo-grid/div/kendo-grid-list/div/div[1]/table/tbody/tr")
-      .should('have.length.above', 0)) 
-      {
-    cy.log("data found");
-  } 
-  else {
-    cy.log("No data found");
-  }
 
-  ///// Click on Save Strategies
- 
-  // Initial Setup
-  cy.get(".sticky_btns_wrap > :nth-child(2) > div > .ng-star-inserted").click();
-  cy.get(".k-window-titlebar").should("be.visible");
-  //cy.get('[style="float: none;"] > .common_anchor').click();
-  cy.get('.text-start > .full_wrap > .form-control').type('user258883')
-  cy.get('[style="float: none;"] > .common_anchor').click()
 
- // Click on my Strategies
-
-  cy.get('#navBarWeb > :nth-child(3) > #Strategies').click({force:true});
-
-  // Click on Activate
-  cy.wait(2000);
-  cy.xpath("(//button[@type='button'][normalize-space()='Activate'])[1]").click();
-  // cy.get(':nth-child(1) > .inner_wrap > .sinner_wrap > .buttons_wrap > #strategy\.strategyId > .btn').click();
-
-  // Click on Live trade
-
-  // cy.xpath("//a[normalize-space()='Live Trade']").click();
-
-  // cy.get('.ng-trigger').should("be.visible");
-
-  // Click on Broker Login
-  cy.get('.dash_left_wrap > .common_anchor').click();
-
-  // 1) AliceBlue
-  // cy.get(":nth-child(3) > .inner_wrap > .a > .common_anchor").click();
-
-  // // User id
-  // cy.get(":nth-child(1) > .form_field_wrap > :nth-child(2) > .form_field").type(
-  //   "1311739"
-  // );
-
-  // // APi Key
-  // cy.get(":nth-child(2) > .form_field_wrap > :nth-child(2) > .form_field").type(
-  //   "fcIoF0TybGnWzqR4auLjf6o9AtPvrltCsGoWZRSeekH3ZQomBj3bhMhLECUf8SoXL6kq38sjBvScYJm29uEegQkX38FVqrD6lm7P2yGYn1SWMMfoFztVrCR5LIzq7iov"
-  // );
-
-  // cy.get("#BtnSubmit").click();
-
-//  cy.get(".a > .greenbg").should("be.visible");
-
-//   cy.get(".a > .greenbg").click();
-
-//  cy.wait(5000);
-//  cy.get(".a > .greenbg").click();
-
-});
+})
