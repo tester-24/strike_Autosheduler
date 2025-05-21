@@ -8,7 +8,7 @@ it('Banknifty_Feature', () => {
     //cy.reload();
     cy.wait(5000);
 
-  //  cy.xpath("//button[@aria-label='Close']").click();
+    //cy.xpath("//button[@aria-label='Close']").click();
 
     cy.get('.nav-link').click({force:true})
 
@@ -27,7 +27,14 @@ it('Banknifty_Feature', () => {
 
     // Click on Option dropdown
     // cy.xpath("//span[contains(text(),'Option')]").click();
-
+    
+     //click on dropdown
+      cy.xpath('/html/body/app-root/app-layout/app-headerpanel/kendo-dialog/div[2]/div/div/div/div/div/div/kendo-dropdownlist').click()
+ 
+     // Click on option 
+      cy.wait(1000)
+      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[3]').click({force:true})
+    
     // Click on Proceed
     cy.wait(1500);
     cy.xpath("//a[normalize-space()='Proceed']").click();
@@ -38,10 +45,14 @@ it('Banknifty_Feature', () => {
 
     // 2) Underlying
     cy.wait(2000)
-    cy.xpath("//input[@id='UnderlyingTypevalue']").click({force:true});
-
+    //cy.xpath("//input[@id='UnderlyingTypevalue']").click({force:true});
+    cy.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/app-option-structure[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/kendo-dropdownlist[1]/span[1]/span[1]").click()
+    // 1) Symbol
+    //cy.xpath("//span[contains(text(),'BANKNIFTY')]").type("{downArrow}{Enter}")
+    cy.wait(500)
+    cy.xpath("/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[2]").click({force:true})
     // 3) Type
-
+    cy.xpath("//input[@id='UnderlyingTypevalue']").click({force:true});
     // 4) Entry Time
     cy.wait(1500);
     cy.xpath( '/html/body/app-root/app-layout/app-option-structure/div[2]/div/div/div/div/div[2]/div/div/div/form[2]/div[1]/div/div/div[2]/div[2]/div/div/div/kendo-timepicker/button/kendo-icon-wrapper').click({force:true});
