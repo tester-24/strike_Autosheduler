@@ -12,8 +12,8 @@ it("Option Backtesting", () => {
 
      // cy.reload();
      cy.wait(5500);
- //    cy.xpath("//button[@aria-label='Close']").click();
-     cy.wait(200)
+    // cy.xpath("//button[@aria-label='Close']").click();
+    // cy.wait(200)
      cy.get(".nav-link").click();
 
      //Login Flow
@@ -36,7 +36,7 @@ it("Option Backtesting", () => {
  
      // Click on Orb option 
       cy.wait(1000)
-      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[1]').click({force:true})
+      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[2]').click({force:true})
     
      // Click on Proceed
      cy.wait(1500);
@@ -59,8 +59,8 @@ it("Option Backtesting", () => {
      cy.wait(2000)
     
      //click on Entry Type dropdown
-     cy.xpath('/html/body/app-root/app-layout/app-orb-structure/div/div/div/div/div/div/div[2]/div/div/form[2]/div[1]/div/div[1]/div[2]/div/div/div/kendo-dropdownlist').click()
-    
+    // cy.xpath('/html/body/app-root/app-layout/app-orb-structure/div/div/div/div/div/div/div[2]/div/div/form[2]/div[1]/div/div[1]/div[2]/div/div/div/kendo-dropdownlist').click()
+    cy.xpath("/html/body/app-root/app-layout/app-orb-structure/div/div/div/div/div/div/div[3]/div/div/form[2]/div[1]/div/div[1]/div[2]/div/div/div/kendo-dropdownlist").click()
      // select Contra type
      cy.wait(500)
      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[2]').click()
@@ -104,8 +104,9 @@ it("Option Backtesting", () => {
        //select checkbox for target
        cy.get(':nth-child(1) > :nth-child(1) > .text-gray-800 > .ml-2').click()
        //click on percentage dropdown
-       cy.xpath('/html/body/app-root/app-layout/app-orb-structure/div/div/div/div/div/div/div[2]/div/div/form[2]/div[5]/div/div/div[1]/div/div/div[1]/kendo-dropdownlist/button').click({force:true})
-       // select point
+      // cy.xpath('/html/body/app-root/app-layout/app-orb-structure/div/div/div/div/div/div/div[2]/div/div/form[2]/div[5]/div/div/div[1]/div/div/div[1]/kendo-dropdownlist/button').click({force:true})
+      cy.xpath("/html/body/app-root/app-layout/app-orb-structure/div/div/div/div/div/div/div[3]/div/div/form[2]/div[5]/div/div/div[1]/div/div/div[1]/kendo-dropdownlist").click() 
+      // select point
        cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[2]').click()
        // verify validation message for 
        cy.get('.full_wrap > .text-danger').should('be.visible')
@@ -115,8 +116,9 @@ it("Option Backtesting", () => {
        //select checkbox for stop loss
        cy.get(':nth-child(2) > :nth-child(1) > .text-gray-800 > .ml-2').click()
        //click on percentage dropdown
-       cy.xpath('/html/body/app-root/app-layout/app-orb-structure/div/div/div/div/div/div/div[2]/div/div/form[2]/div[5]/div/div/div[1]/div/div/div[1]/kendo-dropdownlist/button').click({force:true})
-       // select point
+      // cy.xpath('/html/body/app-root/app-layout/app-orb-structure/div/div/div/div/div/div/div[2]/div/div/form[2]/div[5]/div/div/div[1]/div/div/div[1]/kendo-dropdownlist/button').click({force:true})
+         cy.xpath("/html/body/app-root/app-layout/app-orb-structure/div/div/div/div/div/div/div[3]/div/div/form[2]/div[5]/div/div/div[2]/div/div/div[1]/kendo-dropdownlist").click() 
+      // select point
        cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[2]').click()
        // verify validation message for 
        cy.get('.full_wrap > .text-danger').should('be.visible')
@@ -141,7 +143,7 @@ it("Option Backtesting", () => {
         //click on runbacktest
         cy.get('.secondary').click()
         //validation for data 
-        cy.wait(60000)
+        cy.wait(10000)
         cy.get('#BackTestResultView > :nth-child(2)').should('be.visible')
  
    
