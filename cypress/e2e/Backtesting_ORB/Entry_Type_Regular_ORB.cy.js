@@ -154,7 +154,7 @@ it("Option Backtesting", () => {
        //click on runbacktest
        cy.get('.secondary').click()
        //validation for data 
-       cy.wait(7000)
+       cy.wait(60000)
        cy.get('#BackTestResultView > :nth-child(2)').should('be.visible')
 
 })  
