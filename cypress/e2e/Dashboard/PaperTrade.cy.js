@@ -375,10 +375,10 @@ it('PaperTrade', () => {
   cy.wait(1000)
 
   //Search for startergy which is recently created 
-  cy.wait(500)
+  cy.wait(2000)
   cy.get('#txtStrategySearch').type('user10').type('{Enter}')
   //Click on Activate Button 
-  cy.wait(3000)
+  cy.wait(5000)
   cy.xpath('/html/body/app-root/app-layout/app-strategies/div[2]/div/div/div/div/div[2]/div/div/div[2]/app-my-strategies/div/div[2]/div/app-my-strategies-strategies/div[1]/div[1]/div/div[2]/div[3]/div/button').click()
   //cy.xpath('/html/body/app-root/app-layout/app-strategies/div[2]/div/div/div/div/div[2]/div/div/div[2]/app-my-strategies/div/div[2]/div/app-my-strategies-strategies/div[1]/div/div/div[2]/div[3]/div/button').click({force:true})
   //cy.get(':nth-child(1) > .inner_wrap > .sinner_wrap > .buttons_wrap > #strategy\.strategyId > .btn').click()
