@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe('MarketOverview', () => {
+describe('Market_Overview', () => {
 
  it('All DropDowns', () => {
     cy.viewport(1800, 1000)
