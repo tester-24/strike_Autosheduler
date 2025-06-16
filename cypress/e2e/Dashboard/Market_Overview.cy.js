@@ -388,7 +388,8 @@ describe('MarketOverview', () => {
 
 
       // click on Result calender
-      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[6]/div/div/a').click({ setTimeout: 1000 })
+     // cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[6]/div/div/a').click({ setTimeout: 1000 })
+       cy.xpath("/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[3]/div/div/a").click({force:true})
       // cy.wait(1000)
       //check data is visible or not
       if (cy.xpath("table[class='k-grid-table k-table k-table-md']>tbody>tr") > 0) {
@@ -465,9 +466,9 @@ describe('MarketOverview', () => {
       
       // Scroll to up
       // click on Recent News
-      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[7]/div/div/div[2]/a').click()
-      
-      //cy.wait(1000)
+     // cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[7]/div/div/div[2]/a').click()
+      cy.xpath("/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[4]/div/div/div[2]/a").click({force:true})
+      cy.wait(1500)
       cy.go(-1)
 
     });
