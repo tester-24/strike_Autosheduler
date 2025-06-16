@@ -2,7 +2,7 @@
 
 describe('MarketOverview', () => {
 
-  it('All DropDowns', () => {
+ it('All DropDowns', () => {
     cy.viewport(1800, 1000)
     //Calculate the Time   
     cy.window().then(() => {
@@ -18,7 +18,7 @@ describe('MarketOverview', () => {
       // });
       cy.wait(5000)
      // cy.xpath("//button[@aria-label='Close']").click();
-      cy.wait(500)
+      //cy.wait(500)
       cy.get('#navBarWeb > :nth-child(2) > #Dashboard').should('be.visible')
       const startTime = Date.now();
       cy.get('#navBarWeb > :nth-child(2) > #Dashboard').click()
@@ -145,81 +145,101 @@ describe('MarketOverview', () => {
       cy.wait(500)
       cy.get('.heading_dropdown_wrap > .card-title > .card-label').should('be.visible')
 
+        // *****************Top Gainer ***************************
+    
 
-      // Top gainers dropdown
-      cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-dashboard[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[4]/div[1]/app-dashboard-charts[1]/div[1]/div[2]/div[1]/div[1]/div[1]/kendo-dropdownlist[1]').should('be.visible')
-      cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-dashboard[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[4]/div[1]/app-dashboard-charts[1]/div[1]/div[2]/div[1]/div[1]/div[1]/kendo-dropdownlist[1]').click({ force: true })
-
-      //select nifty mid cap 100
-      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[3]/span[1]').click({ force: true })
-      cy.get('.col-xxl-4.pos_relative > app-dashboard-charts > .card > .card-body').should('be.visible')
-     // cy.scrollTo('center');
-      // nifty metal
-      cy.wait(500)
-      cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-dashboard[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[4]/div[1]/app-dashboard-charts[1]/div[1]/div[2]/div[1]/div[1]/div[1]/kendo-dropdownlist[1]').click({force:true})
-      cy.wait(1000)
-      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[17]/span[1]').click({ force: true })
-      cy.get('.col-xxl-4.pos_relative > app-dashboard-charts > .card > .card-body > .flexspbn').should('be.visible')
-      // Nifty Reality
-      cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-dashboard[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[4]/div[1]/app-dashboard-charts[1]/div[1]/div[2]/div[1]/div[1]/div[1]/kendo-dropdownlist[1]').click({force:true})
-      cy.wait(500)
-      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[5]/span[1]').click({ force: true })
-      cy.get('.col-xxl-4.pos_relative > app-dashboard-charts > .card > .card-body').should('be.visible')
-
-      //Top Losers dropdown
-      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[2]/div/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist').should('be.visible')
-      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[2]/div/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist').click()
+      //click on dropdown
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[1]/h3/div/kendo-dropdownlist/button').should('be.visible')
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[1]/h3/div/kendo-dropdownlist/button').click()
+      // select Top Gainer
+      cy.xpath("/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[1]").click()
+      
+      // click on symbol dropdown 
+      cy.xpath("/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist").click({force:true})
       //select nifty auto
       cy.wait(500)
-      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[4]/span[1]').click()
-      cy.get(':nth-child(2) > .pos_relative > app-dashboard-charts > .card > .card-body').should('be.visible')
-
+      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[10]/span[1]').click({force:true})
+      
+      // click on symbol dropdown 
+      cy.xpath("/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist").click({force:true})
+      cy.wait(500)
       // select nifty media
-      cy.wait(500)
-      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[2]/div/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist').click()
-      // cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[15]/span[1]').should('be.visible')
-      cy.wait(500)
-      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[7]/span[1]').click({ force: true })
-
+      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[15]/span[1]').click({ force: true })
+     
+      // click on symbol dropdown 
+      cy.xpath("/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist").click({force:true})
       //select nifty It
       cy.wait(500)
-      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[2]/div/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist').click()
+      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[14]/span[1]').click({ force: true })
+       
+      //********************************** Top Losser******************************/
+      //click on dropdown
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[1]/h3/div/kendo-dropdownlist/button').should('be.visible')
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[1]/h3/div/kendo-dropdownlist/button').click()
+      // select Top Losser
+      cy.xpath("/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[2]").click()
+      
+      // click on symbol dropdown 
+      cy.xpath("/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist").click({force:true})
+      //select nifty Metal
       cy.wait(500)
-      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[9]/span[1]').click({ force: true })
-      //cy.scrollTo(0,500);
-      // 52 Week High dropdown
-      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[4]/div/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist').should('be.visible')
-      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[4]/div/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist').click()
-      //cy.scrollTo(0,500)
-      //select Nifty small cap 100
-      cy.wait(1000)
-      //cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[8]/span[1]').should('be.visible')
-      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[3]/span[1]').click()
-
-      // Select Nifty Auto
+      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[16]/span[1]').click({force:true})
+      
+      // click on symbol dropdown 
+      cy.xpath("/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist").click({force:true})
       cy.wait(500)
-      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[4]/div/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist').click()
+      // select nifty reality
+      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[19]/span[1]').click({ force: true })
+     
+      // click on symbol dropdown 
+      cy.xpath("/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist").click({force:true})
+      //select nifty 100
       cy.wait(500)
-      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[5]/span[1]').click()
-
-      //52 week low dropdown
+      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[3]/span[1]').click({ force: true })
+     
+      //**************************************** 52 week High ***************************** */
+      //click on dropdown
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[1]/h3/div/kendo-dropdownlist/button').should('be.visible')
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[1]/h3/div/kendo-dropdownlist/button').click()
+     
+      // select 52 Week High
+      cy.xpath("/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[3]").click()
+      
+      // click on symbol dropdown 
+      cy.xpath("/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist").click({force:true})
+      //select nifty samll cap 100
       cy.wait(500)
-      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[5]/div/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist').should('be.visible')
-      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[5]/div/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist').click()
-      cy.wait(1000)
-      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[18]/span[1]').click({force:true})
-
+      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[8]/span[1]').click({force:true})
+      
+      // click on symbol dropdown 
+      cy.xpath("/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist").click({force:true})
+      cy.wait(500)
+      // select nifty FMCG
+      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[13]/span[1]').click({ force: true })
+      cy.wait(500)
+     
+      //***********************************52 Week Low************************* */
+      
+     
+     //click on dropdown
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[1]/h3/div/kendo-dropdownlist/button').should('be.visible')
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[1]/h3/div/kendo-dropdownlist/button').click()
+     
+      // select 52 Week Low
+      cy.xpath("/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[4]").click()
+      
+      // click on symbol dropdown 
+      cy.xpath("/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist").click({force:true})
       //select nifty next 50
       cy.wait(500)
-      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[5]/div/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist').click()
-      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[15]/span[1]').click({force:true})
-
-      //select nifty it
+      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[7]/span[1]').click({force:true})
+      
+      // click on symbol dropdown 
+      cy.xpath("/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist").click({force:true})
       cy.wait(500)
-      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[5]/div/app-dashboard-charts/div/div[2]/div[1]/div/div/kendo-dropdownlist').click({force:true})
+      // select nifty pharma
+      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[17]/span[1]').click({ force: true })
       cy.wait(500)
- 
-      cy.xpath('/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[10]/span[1]').click({ force: true })
     });
   });
 
@@ -238,8 +258,8 @@ describe('MarketOverview', () => {
       //   return false;
       // });
       cy.wait(5000)
-     // cy.xpath("//button[@aria-label='Close']").click();
-      cy.wait(500)
+    //  cy.xpath("//button[@aria-label='Close']").click();
+     // cy.wait(500)
       cy.get('#navBarWeb > :nth-child(2) > #Dashboard').should('be.visible')
       const startTime = Date.now();
       cy.get('#navBarWeb > :nth-child(2) > #Dashboard').click()
@@ -270,6 +290,13 @@ describe('MarketOverview', () => {
       cy.wait(1000)
       //cy.scrollTo('top')
      
+//******************************* Top Gainers View All Button Activity**********************************
+     //click on dropdown
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[1]/h3/div/kendo-dropdownlist/button').should('be.visible')
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[1]/h3/div/kendo-dropdownlist/button').click()
+      // select Top Gainer
+      cy.xpath("/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[1]").click()
+
       // Click on Top gainers view all(7 day%)
       cy.wait(3000)
       cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[2]/div[1]/a').click({force:true})
@@ -297,8 +324,16 @@ describe('MarketOverview', () => {
       }
      cy.go('back')
 
+
+//******************************* Top Losers View All Button Activity**********************************
+
+      //click on dropdown
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[1]/h3/div/kendo-dropdownlist/button').should('be.visible')
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[1]/h3/div/kendo-dropdownlist/button').click()
+      // select Top Losser
+      cy.xpath("/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[2]").click()
     // //   //click on  Top Losers view all (7 day%)
-      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[2]/div/app-dashboard-charts/div/div[2]/div[1]/a').click({force:true})
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[2]/div[1]/a').click({force:true})
      // cy.get(':nth-child(2) > .pos_relative > app-dashboard-charts > .card > .card-body > .flexspbn > a').click()
 
       if (cy.get("table[class='k-grid-table k-table k-table-md']>tbody>tr").should('have.length.greaterThan', 0)) {
@@ -326,8 +361,20 @@ describe('MarketOverview', () => {
       }
       cy.go('back')
 
+      
+
+//******************************* 52 Week High View All Button Activity**********************************
+
+       //click on dropdown
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[1]/h3/div/kendo-dropdownlist/button').should('be.visible')
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[1]/h3/div/kendo-dropdownlist/button').click()
+     
+      // select 52 Week High
+      cy.xpath("/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[3]").click()
+
+
       // //click on 52 Week high view all
-      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[4]/div/app-dashboard-charts/div/div[2]/div[1]/a').click({force:true})
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[2]/div[1]/a').click({force:true})
       cy.wait(1000)
       //cy.get(':nth-child(4) > :nth-child(4) > .pos_relative > app-dashboard-charts > .card > .card-body > .flexspbn > a').click()
 
@@ -336,9 +383,19 @@ describe('MarketOverview', () => {
       }
       cy.go('back')
 
+       
+
+//******************************* 52 Week Low  View All Button Activity**********************************
+
+       //click on dropdown
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[1]/h3/div/kendo-dropdownlist/button').should('be.visible')
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[1]/h3/div/kendo-dropdownlist/button').click()
+     
+      // select 52 Week Low
+      cy.xpath("/html[1]/body[1]/app-root[1]/kendo-popup[1]/div[1]/div[1]/kendo-list[1]/div[1]/ul[1]/li[4]").click()
 
       // click on 52 week low
-      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[2]/div/app-dashboard-charts/div/div[2]/div[1]/a').click({force:true},{timeout:1000})
+      cy.xpath('/html/body/app-root/app-layout/app-dashboard/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/app-dashboard-charts/div/div[2]/div[1]/a').click({force:true},{timeout:1000})
       //cy.get(':nth-child(5) > .pos_relative > app-dashboard-charts > .card > .card-body > .flexspbn > a').click()
       //cy.wait(3000)
       if (cy.get("table[class='k-grid-table k-table k-table-md']>tbody>tr").should('have.length.greaterThan', 0)) {
@@ -347,6 +404,7 @@ describe('MarketOverview', () => {
       cy.go('back')
     });
   });
+
 
 
   it('Click on Calender', () => {
