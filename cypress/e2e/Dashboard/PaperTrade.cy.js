@@ -290,12 +290,12 @@ it('PaperTrade', () => {
    cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-option-structure[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[2]/div[5]/div[1]/div[1]/div[2]/div[1]/div[5]/div[3]/div[1]/div[1]/div[1]/div[2]/kendo-numerictextbox[1]/input[1]').clear({force:true});
     cy.get(':nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .text-danger').should("be.visible");
 
-    cy.get(':nth-child(5) > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('4');
+    cy.get(':nth-child(5) > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('1');
 
     cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-option-structure[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[2]/div[5]/div[1]/div[1]/div[2]/div[1]/div[5]/div[3]/div[1]/div[1]/div[1]/div[2]/kendo-numerictextbox[1]/input[1]').clear({force:true});
     cy.get(':nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .text-danger').should("be.visible");
 
-    cy.get(':nth-child(5) > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('5');
+    cy.get(':nth-child(5) > :nth-child(3) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').type('1');
 
 
     ////// Range Break out
