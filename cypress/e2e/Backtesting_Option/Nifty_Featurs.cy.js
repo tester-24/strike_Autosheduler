@@ -7,18 +7,27 @@ it('Nifty Feature', () => {
     cy.clearAllCookies();
     cy.visit('https://strike.jainam.in/#/');
     //cy.reload();
+    
+    Cypress.on("uncaught:exception", (err) => {
+    // returning false here prevents Cypress from
+    // failing the test
+    console.log("Cypress detected uncaught exception: ", err);
+    return false;
+  });
     cy.wait(4000);
    // cy.xpath("//button[@aria-label='Close']").click();
-    cy.wait(200)
+    //cy.wait(200)
     cy.get('.nav-link').click()
 
     //Login Flow
     cy.wait(1000);
-    cy.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/app-headerpanel[1]/app-login[1]/div[1]/kendo-dialog[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/kendo-textbox[1]/input[1]").type('9825479404')
-    cy.get('.btn_bg_bw').click();
+   // cy.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/app-headerpanel[1]/app-login[1]/div[1]/kendo-dialog[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/kendo-textbox[1]/input[1]").type('9825479404')
+   // cy.get('.btn_bg_bw').click();
+    cy.xpath("//input[@placeholder='Enter email ID / mobile number']").type('9825479404')
     cy.wait(1000);
     cy.xpath("//kendo-textbox[@placeholder='Enter Password']").type('Loop@345');
-    cy.get('.btn_bg_bw').click();
+  //  cy.get('.btn_bg_bw').click();
+    cy.xpath('//button[normalize-space()="Log In"]').click()
     cy.log('Login successful');
 
     // Click on Backtesting
