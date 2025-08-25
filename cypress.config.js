@@ -12,7 +12,8 @@ module.exports = defineConfig({
  // projectId: "211ps1",
  // projectId: "coh7ck",
   //projectId: "9ytypi",
-  projectId: "5wzazh",
+  //projectId: "5wzazh",
+  projectId: "x29h2e",
   animationDistanceThreshold: 50,
   reporter: 'mochawesome',
   reporter: 'cypress-mochawesome-reporter',
@@ -57,4 +58,5 @@ module.exports = defineConfig({
   },
 
 });
+
 
