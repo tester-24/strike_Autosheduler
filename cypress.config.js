@@ -8,12 +8,9 @@ module.exports = defineConfig({
   experimentalStudio: true,
   waitForAnimations: false,
 
- //projectId: "1ena5s",
- // projectId: "211ps1",
- // projectId: "coh7ck",
-  //projectId: "9ytypi",
-  //projectId: "5wzazh",
-  projectId: "x29h2e",
+ // projectId: "x29h2e",
+  projectId: "zk19q2",
+  
   animationDistanceThreshold: 50,
   reporter: 'mochawesome',
   reporter: 'cypress-mochawesome-reporter',
@@ -58,5 +55,6 @@ module.exports = defineConfig({
   },
 
 });
+
 
 
