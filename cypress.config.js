@@ -9,7 +9,8 @@ module.exports = defineConfig({
   waitForAnimations: false,
 
  // projectId: "x29h2e",
-  projectId: "zk19q2",
+ // projectId: "zk19q2",
+  projectId: "t61mh2",
   
   animationDistanceThreshold: 50,
   reporter: 'mochawesome',
@@ -55,6 +56,7 @@ module.exports = defineConfig({
   },
 
 });
+
 
 
 
