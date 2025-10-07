@@ -10,7 +10,8 @@ module.exports = defineConfig({
 
  // projectId: "x29h2e",
  // projectId: "zk19q2",
-  projectId: "t61mh2",
+ // projectId: "t61mh2",
+  projectId: "e2nnb3",
   
   animationDistanceThreshold: 50,
   reporter: 'mochawesome',
@@ -56,6 +57,7 @@ module.exports = defineConfig({
   },
 
 });
+
 
 
 
